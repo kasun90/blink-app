@@ -1,12 +1,16 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
 import Header from './components/header/Header';
+import Favorite from './components/favorite/Favorite';
+
 
 class App extends Component {
   render() {
     return (
-      <Header/>
+      <div>
+        <Header/>
+        <Favorite/>
+      </div>
     );
   }
 }
