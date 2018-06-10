@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import logo from './logo.png';
 import './Header.css';
+import './../../common/Colors.css';
 import HeaderButton from './HeaderButton.js';
 
 class Header extends Component {
@@ -16,7 +17,7 @@ class Header extends Component {
 
     render() {
         return (
-        <div className="Header">
+        <div className={`Header Background`}>
             <div className="Logo-container">
                 <img src={logo} className="Logo" alt="logo" />
             </div>

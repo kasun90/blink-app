@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
 import './Header.css';
+import './../../common/Colors.css';
 
 class HeaderButton extends Component {
     render() {
         return (
-            <div className="Button">
+            <div className={`Button Blink`}>
                 <a role="button" onClick={this.props.onClick}>
                 {this.props.name}
                 </a>
