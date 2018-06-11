@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './Footer.css';
 import './../../common/Colors.css';
 import Colors from './../../common/Colors';
-import Ionicon from 'react-ionicons'
+import Ionicon from 'react-ionicons';
 
 
 class Footer extends Component {

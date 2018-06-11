@@ -44,6 +44,10 @@
     padding-right: 1em;
 }
 
+.Arrow-container {
+    display: none;
+}
+
 .Left-text {
     text-align: right;
 }
@@ -61,16 +65,77 @@
 }
 
 @media screen and (max-width: 60em) {
+    .Left-text {
+        text-align: center;
+    }
+    
+    .Right-text {
+        text-align: center;
+    }
+
+    .Explore {
+        font-size: 3em;
+    }
+
+    .Story-container {
+        margin-top: 1vw;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        height: auto;
+        width: 100%;
+    }
+    
+    .Image-container {
+        height: auto;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    
+    .Text-container {
+        width: 50%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin-top: 0.5em;
+        margin-bottom: 0.5em;
+        padding-left: 1em;
+        padding-right: 1em;
+    }
+    
+    .Arrow-container {
+        display: flex;
+        justify-content: center;
+        align-content: center;
+        margin-top: 2em;
+        margin-bottom: 2em;
+    }
+
+    #text {
+        order: 1;
+    }
+
+    #arrow {
+        order: 2;
+    }
+
+    #image {
+        order: 3;
+    }
+
+}
+
+@media screen and (max-width: 50em) {
     .Title {
         font-size: 2em;
     }
     
     .Description {
         font-size: 0.5em;
-    }
-
-    .Explore {
-        font-size: 3em;
     }
 }
 
