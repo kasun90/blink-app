@@ -6,7 +6,7 @@
     display: flex;
     flex-direction: row;
     background: transparent;
-    z-index: 1;
+    z-index: 2;
 }
 
 .Logo-container {
@@ -22,6 +22,7 @@
     display: block;
     width: auto;
     height: 90%;
+    cursor: pointer;
 }
 
 .Header-button {

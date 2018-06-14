@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import './App.css';
 import Header from './components/header/Header';
-import Favorite from './components/favorite/Favorite';
-import Highlights from './components/highlights/Highlights';
-import BookMe from './components/bookme/BookMe';
 import Footer from './components/footer/Footer';
+import Home from './components/home/Home';
+import Contact from './components/contact/Contact';
+import {Route} from "react-router-dom";
 
 
 class App extends Component {
@@ -13,9 +13,8 @@ class App extends Component {
       <div>
         <Header/>
         <div className="Body-container">
-          <Favorite/>
-          <Highlights/>
-          <BookMe/>
+          <Route exact path="/" component={Home}/>
+          <Route exact path="/contact" component={Contact}/>
           <Footer/>
         </div>
       </div>

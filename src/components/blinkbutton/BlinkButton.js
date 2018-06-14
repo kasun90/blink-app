@@ -5,9 +5,11 @@ import './../../common/Colors.css';
 class BlinkButton extends Component {
 
     render() {
+        const extraStyles = this.props.className !== undefined ? this.props.className : '';
+
         return(
             <a role="button" onClick={this.props.onClick}>
-                <div className={`Blink-button-container Blink`}>
+                <div className={`Blink-button-container Blink ${extraStyles}`}>
                     <div>
                         {this.props.children}
                     </div>

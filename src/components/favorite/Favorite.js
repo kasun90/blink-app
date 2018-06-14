@@ -59,7 +59,11 @@ class Favorite extends Component {
         if (this.index === this.imagesToLoad.length) {
             this.index = 0;
         }
-        setTimeout(this.carousel, 3000);
+        this.timer = setTimeout(this.carousel, 3000);
+    }
+
+    componentWillUnmount() {
+        clearTimeout(this.timer);
     }
 
     render() {
