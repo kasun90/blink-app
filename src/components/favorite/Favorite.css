@@ -1,68 +1,95 @@
 .Favorite-container {
-    margin-top: 10px;
     width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.Main-image-container {
+    height: 100vh;
     position: relative;
-    width: 90%;
 }
 
-.Main-image {
-    display: block;
+.Favorite-carousel {
     width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.Favorite-icon {
+    position: relative;
+    -webkit-animation-name: iconAnimation; /* Safari 4.0 - 8.0 */
+    -webkit-animation-duration: 3s; /* Safari 4.0 - 8.0 */
+    -webkit-animation-iteration-count: infinite; /* Safari 4.0 - 8.0 */
+    animation-name: iconAnimation;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes iconAnimation {
+    0% {opacity: 0;top: -0.4em}
+    50% {opacity: 1;}
+    100% {opacity: 0;top: 0.4em}
+}
+
+@-webkit-keyframes iconAnimation {
+    0% {opacity: 0;top: -0.4em}
+    50% {opacity: 1;}
+    100% {opacity: 0;top: 0.4em}
+}
+
+@keyframes slideShowFadeIn {
+    0% {opacity: 0;}
+    100% {opacity: 1;}
+}
+
+@keyframes slideShowFadeOut {
+    0% {opacity: 1;}
+    100% {opacity: 0;
+    display: none}
+}
+
+.Main-logo-image {
+    display: block;
+    width: 400px;
     height: auto;
-    
+}
+
+.Favorite-main-text {
+    font-size: 2em;
+    letter-spacing: 0.5em;
+    margin-bottom: 10vh;
 }
 
 .Favorite-overlay {
+    z-index: 1;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
     position: absolute;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
-    background-color: rgba(0, 0, 0, 0.8);
-    top: 90%;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    height: 10%;
-    width: 100%;
-    opacity: 0;
-    transition: .5s ease;
+    justify-content: flex-end;
 }
 
-.Overlay-content {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-    font-size: 1vw;
+@media screen and (max-width: 80em) {
+    .Main-logo-image {
+        display: block;
+        width: 300px;
+        height: auto;
+        
+    }
+    
+    .Favorite-main-text {
+        font-size: 1em;
+        letter-spacing: 0.2em;
+    }
 }
 
-.Main-image-container:hover .Favorite-overlay {
-    opacity: 1;
-}
-
-.Image-text {
-    margin-top: 0.5em;
-    color: #999999;
-    font-size: 0.8em;
-}
 
 @media screen and (max-width: 60em) {
-    .Main-image-container {
-        width: 100%;
-    }
-    .Image-text {
-        font-size: 0.5em;
-    }
-
-    .Overlay-content {
-        font-size: 0;
+    .Main-logo-image {
+        display: block;
+        width: 200px;
+        height: auto;
+        
     }
 }

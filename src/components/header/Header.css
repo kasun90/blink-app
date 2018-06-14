@@ -1,10 +1,11 @@
 .Header {
-    position: sticky;
+    position: fixed;
     top: 0;
     width: 100%;
     height: 60px;
     display: flex;
     flex-direction: row;
+    background: transparent;
     z-index: 1;
 }
 
@@ -23,7 +24,7 @@
     height: 90%;
 }
 
-.Button {
+.Header-button {
     font-size: 1em;
     border-radius: 8px;
     padding-right: 20px;
@@ -32,7 +33,7 @@
     cursor: pointer;
 }
 
-.Button-container {
+.Header-button-container {
     width: 50%;
     height: 100%;
     margin-right: 10px;

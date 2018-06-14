@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import logo from './logo.png';
+import logo from './logo.svg';
 import './Header.css';
 import './../../common/Colors.css';
 import HeaderButton from './HeaderButton.js';
@@ -17,11 +17,11 @@ class Header extends Component {
 
     render() {
         return (
-        <div className={`Header Background`}>
+        <div className={`Header`}>
             <div className="Logo-container">
                 <img src={logo} className="Logo" alt="logo" />
             </div>
-            <div className="Button-container">
+            <div className="Header-button-container">
                 <HeaderButton name="ALBUMS" onClick={this.onAlbumsClick}/>
                 <HeaderButton name="CONTACT"/>
             </div>

@@ -1,0 +1,14 @@
+.Blink-button-container {
+    cursor: pointer;
+    padding-left: 1em;
+    padding-right: 1em;
+    padding-top: 0.2em;
+    padding-bottom: 0.2em;
+    border: 1px solid;
+    transition: all 500ms ease;
+}
+
+.Blink-button-container:hover {
+    background-color: #f55d5d;
+    color: white;
+}

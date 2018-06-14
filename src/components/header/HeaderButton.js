@@ -5,7 +5,7 @@ import './../../common/Colors.css';
 class HeaderButton extends Component {
     render() {
         return (
-            <div className={`Button Blink`}>
+            <div className={`Header-button Blink`}>
                 <a role="button" onClick={this.props.onClick}>
                 {this.props.name}
                 </a>
