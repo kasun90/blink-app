@@ -9,3 +9,7 @@
 .Blink-border {
     border-color: #f55d5d;
 }
+
+.Blink-outline {
+    outline-color: #f55d5d;
+}
