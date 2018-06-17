@@ -159,6 +159,11 @@
         width: 90%;
     }
 
+    .GetTouch-Seperator {
+        width: 90%;
+    }
+    
+
 
     .AboutMe-container {
         flex-direction: column;

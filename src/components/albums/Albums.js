@@ -13,6 +13,10 @@ class Albums extends BaseAlbum {
         
     }
 
+    componentDidMount() {
+        window.scroll(0,0);
+    }
+
     onViewAll() {
         window.open("https://www.flickr.com/photos/99108602@N04/albums", "_blank");
     }
