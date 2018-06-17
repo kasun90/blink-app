@@ -15,7 +15,7 @@ class Header extends Component {
     }
 
     onAlbumsClick() {
-        console.log("Albums clicked");
+        this.props.history.push('/albums');
     }
 
     onContactClick() {

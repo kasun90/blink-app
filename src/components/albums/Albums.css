@@ -1,0 +1,107 @@
+* {
+    box-sizing: border-box;
+}
+
+.Album-container {
+    width: 100%;
+    margin-top: 20vh;
+    padding-right: 2em;
+    padding-left: 2em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.Album-header {
+    font-size: 3em;
+}
+
+.Album-Seperator {
+    width: 100%;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    border-bottom: 1px solid;
+}
+
+.Album-grid {
+    width: 100%;
+    column-count: 3;
+}
+
+.Album-view-button {
+    font-size: 2em;
+}
+
+/* Thumbnail */
+
+.Album-thumbnail-container {
+    display: block;
+    position: relative;
+    width: 100%;
+    padding: 10vh 1vw;
+}
+
+
+.Album-thumbnail-image {
+    padding: 1vh;
+    width: 100%;
+    height: auto;
+    display: block;
+    border: 1px solid;
+    cursor: pointer;
+}
+
+.Album-name-text {
+    font-size: 2em;
+    position: absolute;
+    left: calc(1vw + 1em);
+    bottom: calc(10vh + 1em);
+    text-align: left;
+}
+
+
+/* Thumbnail end*/
+
+@media screen and (max-width: 80em) {
+    .Album-grid {
+        column-count: 2;
+    }
+}
+
+
+@media screen and (max-width: 60em) {
+    .Album-grid {
+        column-count: 1;
+    }
+
+    .Album-view-button {
+        font-size: 1.5em;
+    }
+}
+
+
+
+
+
+/* .Album-grid {
+    width: 100%;
+    column-count: 3;
+}
+
+/* Thumbnail 
+
+.Album-thumbnail-container {
+    display: block;
+    width: 100%;
+    padding: 2em;
+}
+
+
+.Album-thumbnail-image {
+    padding: 0.5em;
+    width: 100%;
+    height: auto;
+    display: block;
+    border: 1px solid;
+}
+ */ 

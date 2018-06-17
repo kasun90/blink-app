@@ -4,6 +4,8 @@ import Header from './components/header/Header';
 import Footer from './components/footer/Footer';
 import Home from './components/home/Home';
 import Contact from './components/contact/Contact';
+import Albums from './components/albums/Albums';
+import AlbumExpanded from './components/albums/AlbumExpanded';
 import {Route} from "react-router-dom";
 
 
@@ -15,6 +17,8 @@ class App extends Component {
         <div className="Body-container">
           <Route exact path="/" component={Home}/>
           <Route exact path="/contact" component={Contact}/>
+          <Route exact path="/albums" component={Albums}/>
+          <Route path="/albums/view" component={AlbumExpanded}/>
           <Footer/>
         </div>
       </div>
