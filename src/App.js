@@ -6,7 +6,8 @@ import Home from './components/home/Home';
 import Contact from './components/contact/Contact';
 import Albums from './components/albums/Albums';
 import AlbumExpanded from './components/albums/AlbumExpanded';
-import {Route} from "react-router-dom";
+import NoMatch from './NoMatch';
+import {Route, Switch} from "react-router-dom";
 
 
 class App extends Component {
@@ -15,10 +16,13 @@ class App extends Component {
       <div>
         <Header/>
         <div className="Body-container">
-          <Route exact path="/" component={Home}/>
-          <Route exact path="/contact" component={Contact}/>
-          <Route exact path="/albums" component={Albums}/>
-          <Route path="/albums/view" component={AlbumExpanded}/>
+          <Switch>
+            <Route exact path="/" component={Home}/>
+            <Route exact path="/contact" component={Contact}/>
+            <Route exact path="/albums" component={Albums}/>
+            <Route path="/albums/view" component={AlbumExpanded}/>
+            <Route component={NoMatch}/>
+          </Switch>
           <Footer/>
         </div>
       </div>
