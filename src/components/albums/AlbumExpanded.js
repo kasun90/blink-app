@@ -3,6 +3,7 @@ import './AlbumExpanded.css';
 import './../../common/Colors.css';
 import BaseAlbum from './BaseAlbum';
 import AlbumImage from './AlbumImage';
+import NoAlbum from './NoAlbum';
 import BlinkButton from './../blinkbutton/BlinkButton';
 import {withRouter} from 'react-router-dom';
 
@@ -25,6 +26,10 @@ class AlbumExpanded extends BaseAlbum {
 
         var key = window.location.pathname;
         key = key.substring(key.lastIndexOf("/") + 1 , key.length);
+
+        if (!this.albumsMap.has(key)) {
+            return(<NoAlbum/>);
+        }
 
 
         const photos = [];
