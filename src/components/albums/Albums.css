@@ -73,7 +73,7 @@
 
 @media screen and (max-width: 100em) {
     .Album-grid {
-        column-count: 2;
+        column-count: 3;
     }
 }
 
