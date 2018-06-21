@@ -18,7 +18,7 @@ class MoreAbout extends Component {
     render() {
         return(
             <div className={`MoreAbout-container Blink`}>
-                <div>This site is an open source project initiated by me.<br/>
+                <div>This site is an open source project.<br/>
                 If you like to join as a mentor or someone who is willing to learn, you are most welcome.
                 <br/><br/>
                 Also I love pull requests. Check the project on GitHub. I'm open for suggestions and critics.

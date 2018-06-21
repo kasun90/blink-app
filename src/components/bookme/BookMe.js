@@ -18,7 +18,7 @@ class BookMe extends Component {
     render() {
         return(
             <div className="BookMe-container">
-                <div className="Blink">Interested? Book a session</div>
+                <div className="Blink">Interested? or You have a cool idea on your mind?</div>
                 <BlinkButton className="BookMe-button" onClick={this.onContact}>Contact Me</BlinkButton>
             </div>
         );

@@ -9,9 +9,9 @@ class AboutMe extends Component {
             <div className={`AboutMe-text-container Blink`}>
                 <div className="AboutMe-header">Hi, I'm Kasun</div>
                 <div className="AboutMe-paragraph">
-                    I love photographing people. And I also love outdoors and natural light.<br/>
+                    I love portraits. And I also love outdoors and natural light.<br/>
                     A photograph is about a fraction of time of our lives. It is a memory. My goal is to
-                    create a memory that people who appear there can cherish for a life time. It may be now or it can be 20 years 
+                    create a memory that people who appear there can cherish for a life time. It may be now or it can be years 
                     from now. <br/><br/>
                     I develop softwares for a living. Photography is my hobby. If you think I can make your memories more special, you know what to do.
                     Just contact me.

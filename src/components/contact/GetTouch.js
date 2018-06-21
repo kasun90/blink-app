@@ -17,7 +17,7 @@ class GetTouch extends Component {
     }
 
     onSend() {
-        console.log("resuts  " + this.name + "   " + this.phoneNumber);
+        alert("This feature is not available yet. I'm sorry :(")
     }
 
     onNameChange(event) {

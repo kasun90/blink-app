@@ -24,20 +24,21 @@ class Highlights extends Component {
                 </div>
                 <div className={`Text-container Blink`} id="text">
                     <div className={`Right-text Title`}>
-                        Amazing fields of Ampara
+                        Fields of Ampara
                     </div>
                     <div className="Seperator"></div>
-                    <div className={`Right-text Description`}>Found this on the way to our trip to Amapara. Scenics route in the Lahugala was an attraction. Very nice place to spend the weekend</div>
+                    <div className={`Right-text Description`}>Found this on the way to my trip to Amapara with friends. 
+                    You can see this place while you travel via the scenic Lahugala road.</div>
                 </div>
                 
             </div>
             <div className="Story-container">
                 <div className={`Text-container Blink`} id="text">
                     <div className={`Left-text Title`}>
-                        We do fashion too!
+                        I'm in to portraits!
                     </div>
                     <div className="Seperator"></div>
-                    <div className={`Left-text Description`}>Get your portraits done with us. Choose the style as u wish. Procedure has never been more flexible. Book your session now</div>
+                    <div className={`Left-text Description`}>Get your portraits done. Choose the style you want. Procedure has never been more flexible. Book your session now</div>
                 </div>
                 <div className="Arrow-container" id="arrow">
                     <Ionicon icon="md-arrow-dropdown-circle" fontSize="2em" color={Colors.Blink}/>
@@ -55,10 +56,10 @@ class Highlights extends Component {
                 </div>
                 <div className={`Text-container Blink`} id="text">
                     <div className={`Right-text Title`}>
-                        Little bit more from the nature!
+                        Again, I love nature!
                     </div>
                     <div className="Seperator"></div>
-                    <div className={`Right-text Description`}>On the way to the road trip. Bit of heavy weather. Expected the worse. Got home with this.</div>
+                    <div className={`Right-text Description`}>Cold weather and hiking. That is one perfect combination. Captured this at Badulla</div>
                 </div>
                 
             </div>
