@@ -56,7 +56,7 @@ class Highlights extends Component {
                 </div>
                 <div className={`Text-container Blink`} id="text">
                     <div className={`Right-text Title`}>
-                        Again, I love nature!
+                        I love nature!
                     </div>
                     <div className="Seperator"></div>
                     <div className={`Right-text Description`}>Cold weather and hiking. That is one perfect combination. Captured this at Badulla</div>
