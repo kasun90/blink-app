@@ -1,23 +1,28 @@
-import React, { Component } from 'react';
+import React from 'react';
 import './Contact.css';
 import './../../common/Colors.css';
 import getTouchImage from './img/getintouch.jpg';
 import BlinkTextField from './../blinktextfield/BlinkTextField';
 import BlinkButton from './../blinkbutton/BlinkButton';
+import WithNetwork from './../network/WithNetwork';
 
-class GetTouch extends Component {
+class GetTouch extends WithNetwork {
 
     constructor(props) {
         super(props);
         this.name = "";
         this.phoneNumber = "";
+        this.message = "";
         this.onSend = this.onSend.bind(this);
         this.onNameChange = this.onNameChange.bind(this);
         this.onPhoneNumberChange = this.onPhoneNumberChange.bind(this);
+        this.onMessageChange = this.onMessageChange.bind(this);
     }
 
     onSend() {
-        alert("This feature is not available yet. I'm sorry :(")
+        var msg = WithNetwork.buildMessage('com.blink.shared.client.messaging.UserMessage');
+        msg.message = this.message;
+        this.send(msg, undefined);
     }
 
     onNameChange(event) {
@@ -26,6 +31,10 @@ class GetTouch extends Component {
 
     onPhoneNumberChange(event) {
         this.phoneNumber = event.target.value;
+    }
+
+    onMessageChange(event) {
+        this.message = event.target.value;
     }
 
 
@@ -42,7 +51,7 @@ class GetTouch extends Component {
                 <div className="GetTouch-form-submit-container">
                     <BlinkTextField className="GetTouch-sub-header" type="text" placeholder="Name" onChange={this.onNameChange}/>
                     <BlinkTextField className="GetTouch-sub-header" type="text" placeholder="Phone Number" onChange={this.onPhoneNumberChange}/>
-                    <textarea className={`GetTouch-form-text-area Blink-outline`} placeholder="Type Your Message Here"></textarea>
+                    <textarea className={`GetTouch-form-text-area Blink-outline`} placeholder="Type Your Message Here" onChange={this.onMessageChange}></textarea>
                     <BlinkButton className="GetTouch-sub-header" onClick={this.onSend}>Send</BlinkButton>
                 </div>
                 
