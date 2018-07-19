@@ -5,6 +5,7 @@ import getTouchImage from './img/getintouch.jpg';
 import BlinkTextField from './../blinktextfield/BlinkTextField';
 import BlinkButton from './../blinkbutton/BlinkButton';
 import WithNetwork from './../network/WithNetwork';
+import BlinkModal from './../blinkModal/BlinkModal';
 
 class GetTouch extends WithNetwork {
 
@@ -22,7 +23,11 @@ class GetTouch extends WithNetwork {
     onSend() {
         var msg = WithNetwork.buildMessage('com.blink.shared.client.messaging.UserMessage');
         msg.message = this.message;
-        this.send(msg, undefined);
+        this.send(msg, (response, error) => {
+            if (error !== undefined) {
+                
+            }
+        });
     }
 
     onNameChange(event) {
@@ -54,8 +59,8 @@ class GetTouch extends WithNetwork {
                     <textarea className={`GetTouch-form-text-area Blink-outline`} placeholder="Type Your Message Here" onChange={this.onMessageChange}></textarea>
                     <BlinkButton className="GetTouch-sub-header" onClick={this.onSend}>Send</BlinkButton>
                 </div>
-                
             </div>
+            <BlinkModal message="Message recorded and fine" isOpen={true}/>
         </div>);
     }
 }
