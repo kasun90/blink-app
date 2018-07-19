@@ -7,10 +7,8 @@ class BlinkModal extends Component {
 
     constructor(props) {
         super(props);
-        const isOpen = this.props.isOpen === undefined ? false : this.props.isOpen;
-
         this.state = {
-            isOpen: isOpen
+            isOpen: this.props.isOpen === undefined ? false : this.props.isOpen
         }
         this.onClose = this.onClose.bind(this);
     }
@@ -18,6 +16,12 @@ class BlinkModal extends Component {
     onClose() {
         this.setState({
             isOpen: false
+        });
+    }
+
+    componentWillReceiveProps(nextProps, nextState) {
+        this.setState({
+            isOpen: nextProps.isOpen
         });
     }
 
