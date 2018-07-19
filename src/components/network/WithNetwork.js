@@ -21,9 +21,9 @@ class WithNetwork extends Component {
         params.append('message', JSON.stringify(data));
         this.instance.post('/client', params)
         .then(response => {
-            console.log(response.data);
+            callback(response.data, undefined);
         }).catch(error => {
-            console.log(error);
+            callback(undefined, new Error('Connection Error'))
         });
     }
 }
