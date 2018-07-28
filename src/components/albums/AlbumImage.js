@@ -6,7 +6,7 @@ class AlbumImage extends Component {
     
     render() {
         return(<div className="AlbumExp-image-container">
-            <img className="AlbumExp-image-image" src={require(`${this.props.src}`)} alt="album_image"/>
+            <img className="AlbumExp-image-image" src={this.props.src} alt="album_image"/>
         </div>);
     }
 }
