@@ -139,6 +139,14 @@
     margin: 1em;
 }
 
+.blinkr-logo {
+    margin-top: 1em;
+    margin-bottom: 1em;
+    display: block;
+    height: 3em;
+    width: auto;
+}
+
 
 /* More about end*/
 
