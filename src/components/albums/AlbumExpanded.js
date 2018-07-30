@@ -57,13 +57,22 @@ class AlbumExpanded extends WithNetwork {
             photos.push(<AlbumImage src={_photos[i].url} key={_photos[i].resource}/>);
         }
 
+        const headerStyle = {
+            backgroundImage: `url(${this.state.album.cover.url})`
+        }
+
         return(<div className={`AlbumExp-container Blink`}>
-            <div className="AlbumExp-header">{this.state.album.title}</div>
-            <div className="AlbumExp-Seperator"/>
-            <div className="AlbumExp-grid">
-                {photos}
+            <div style={headerStyle} className="AlbumExp-header">
+                <div className="AlbumExp-header-title">{this.state.album.title}</div>
+                <div className="AlbumExp-header-desc">{this.state.album.description}</div>
             </div>
-            <BlinkButton className="AlbumExp-back-button" onClick={this.onBack}>Back to Albums</BlinkButton>
+            <div className="AlbumExp-sub-container">
+                <div className="AlbumExp-grid">
+                    {photos}
+                </div>
+                <BlinkButton className="AlbumExp-back-button" onClick={this.onBack}>Back to Albums</BlinkButton>
+            </div>
+            
         </div>);
     }
 }

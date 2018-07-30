@@ -4,7 +4,12 @@
 
 .AlbumExp-container {
     width: 100%;
-    margin-top: 20vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.AlbumExp-sub-container {
     padding-right: 2vw;
     padding-left: 2vw;
     display: flex;
@@ -13,7 +18,25 @@
 }
 
 .AlbumExp-header {
+    height: 50vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    background-size: cover;
+    background-position: center;
+    background-color: rgba(255, 255, 255, 0.5)!important;
+    background-blend-mode: color;
+}
+
+.AlbumExp-header-title {
     font-size: 3em;
+}
+
+.AlbumExp-header-desc {
+    font-size: 1.2em;
+    margin-bottom: 1em;
 }
 
 .AlbumExp-Seperator {
