@@ -1,0 +1,66 @@
+.Album-show-main {
+    width: 100%;
+    height: 100vh;
+    background-color: rgb(255, 255, 255, 0.8);
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    z-index: 5;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.Album-show-photo-container {
+    height: 100vh;
+    width: 100%;
+    overflow: scroll;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.Album-show-photo {
+    height: 100%;
+    width: auto;
+    display: block;
+}
+
+.Album-show-controls {
+    position: relative;
+    z-index: 6;
+}
+
+.Album-show-arrow-back {
+    position: absolute;
+    left: 0;
+    transform: translateY(-50%)
+}
+
+.Album-show-arrow-forward {
+    position: absolute;
+}
+
+.Album-show-close {
+    position: absolute;
+}
+
+@media screen and (max-height: 500px) {
+
+    .Album-show-photo {
+        height: auto;
+        width: 50%;
+        display: block;
+    }
+}
+
+@media screen and (max-width: 500px) {
+
+    .Album-show-photo {
+        height: auto;
+        width: 100%;
+        display: block;
+    }
+}
