@@ -6,15 +6,19 @@ import NoAlbum from './NoAlbum';
 import BlinkButton from './../blinkbutton/BlinkButton';
 import {withRouter} from 'react-router-dom';
 import WithNetwork from '../network/WithNetwork';
+import AlbumSlideShow from './AlbumSlideShow';
 
 class AlbumExpanded extends WithNetwork {
 
     constructor(props) {
         super(props);
         this.onBack = this.onBack.bind(this);
+        this.onPhotoSelect = this.onPhotoSelect.bind(this);
         this.state = {
             noAlbum : false,
-            album : undefined
+            album : undefined,
+            openShow: false,
+            selectedIndex: undefined
         }
     }
 
@@ -45,6 +49,13 @@ class AlbumExpanded extends WithNetwork {
         this.props.history.push('/albums');
     }
 
+    onPhotoSelect(index) {
+        this.setState({
+            selectedIndex: index,
+            openShow: true
+        });
+    }
+
     render() {
         if (this.state.noAlbum || this.state.album === undefined) {
             return(<NoAlbum/>);
@@ -54,7 +65,7 @@ class AlbumExpanded extends WithNetwork {
         const photos = [];
         const _photos = this.state.album.photos;
         for (var i = 0; i < _photos.length ; i ++) {
-            photos.push(<AlbumImage src={_photos[i].url} key={_photos[i].resource}/>);
+            photos.push(<AlbumImage src={_photos[i].url} photoIndex={i} key={_photos[i].resource} onSelect={this.onPhotoSelect}/>);
         }
 
         const headerStyle = {
@@ -72,7 +83,7 @@ class AlbumExpanded extends WithNetwork {
                 </div>
                 <BlinkButton className="AlbumExp-back-button" onClick={this.onBack}>Back to Albums</BlinkButton>
             </div>
-            
+            {this.state.openShow && <AlbumSlideShow photos={this.state.album.photos} selectedIndex={this.state.selectedIndex}/>}
         </div>);
     }
 }
