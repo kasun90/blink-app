@@ -53,7 +53,7 @@ class AlbumExpanded extends WithNetwork {
 
         const photos = [];
         const _photos = this.state.album.photos;
-        for (var i = 1; i < _photos.length ; i ++) {
+        for (var i = 0; i < _photos.length ; i ++) {
             photos.push(<AlbumImage src={_photos[i].url} key={_photos[i].resource}/>);
         }
 
