@@ -103,4 +103,12 @@
     .NoAlbum-container {
         font-size: 1em;
     }
+
+    .AlbumExp-header-title {
+        font-size: 2em;
+    }
+
+    .AlbumExp-header-desc {
+        font-size: 1em;
+    }
 }
