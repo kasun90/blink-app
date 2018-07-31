@@ -6,23 +6,40 @@ import Colors from '../../common/Colors';
 class AlbumSlideShow extends Component {
 
     currentIndex = 0;
+    photosCount = 0;
 
     constructor(props) {
         super(props);
-        this.state = {
-            isOpen: this.props.isOpen === undefined ? false : this.props.isOpen
-        }
         this.onClose = this.onClose.bind(this);
         this.currentIndex = this.props.selectedIndex;
+        this.photosCount = this.props.photos.length;
     }
 
     onClose() {
-        this.setState({
-            isOpen: false
-        });
+        if (this.props.onClose !== undefined) {
+            this.props.onClose();
+        }
     }
 
     componentDidMount() {
+        this.setPhoto();
+    }
+
+    plusDiv(number) {
+        this.currentIndex = this.currentIndex + number;
+
+        if (this.currentIndex > this.photosCount - 1) {
+            this.currentIndex = 0;
+        }
+
+        if (this.currentIndex < 0) {
+            this.currentIndex = this.photosCount - 1;
+        }
+
+        this.setPhoto();
+    }
+
+    setPhoto() {
         var photoDivs = document.getElementsByClassName('Album-show-photo');
 
         for (var i = 0; i < photoDivs.length; i++) {
@@ -30,12 +47,6 @@ class AlbumSlideShow extends Component {
         }
 
         photoDivs[this.currentIndex].style.display = "block";
-    }
-
-    componentWillReceiveProps(nextProps, nextState) {
-        this.setState({
-            isOpen: nextProps.isOpen
-        });
     }
 
     render() {
@@ -53,11 +64,15 @@ class AlbumSlideShow extends Component {
                 {photoDivs}
             </div>
             <div className="Album-show-controls">
-                <div className="Album-show-arrow-back">
-                    <Ionicon icon="md-arrow-back" fontSize="1.5em" color={Colors.Blink}/>
+                <div className="Album-show-arrow-back" onClick={this.plusDiv.bind(this, -1)}>
+                    <Ionicon icon="md-arrow-back" fontSize="3em" color={Colors.Blink}/>
                 </div>
-                <div className="Album-show-arrow-forward"></div>
-                <div className="Album-show-close"></div>
+                <div className="Album-show-arrow-forward" onClick={this.plusDiv.bind(this, 1)}>
+                    <Ionicon icon="md-arrow-forward" fontSize="3em" color={Colors.Blink}/>
+                </div>
+                <div className="Album-show-close" onClick={this.onClose}>
+                    <Ionicon icon="md-close-circle" fontSize="3em" color={Colors.Blink}/>
+                </div>
             </div>
         </div>);
     }
