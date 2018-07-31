@@ -11,22 +11,12 @@ class Header extends Component {
 
     constructor(props) {
         super(props)
-        this.onAlbumsClick = this.onAlbumsClick.bind(this);
-        this.onContactClick = this.onContactClick.bind(this);
         this.onHomeClick = this.onHomeClick.bind(this);
         this.onHamToggle = this.onHamToggle.bind(this);
 
         this.state = {
             toggleClass: ''
         }
-    }
-
-    onAlbumsClick() {
-        this.props.history.push('/albums');
-    }
-
-    onContactClick() {
-        this.props.history.push('/contact');
     }
 
     onHomeClick() {
@@ -44,8 +34,8 @@ class Header extends Component {
         const buttons = [];
 
         var key = 0;
-        buttons.push(<HeaderButton name="ALBUMS" onClick={this.onAlbumsClick} key={key++}/>);
-        buttons.push(<HeaderButton name="CONTACT" onClick={this.onContactClick} key={key++}/>)
+        buttons.push(<HeaderButton name="ALBUMS" path='/albums' key={key++}/>);
+        buttons.push(<HeaderButton name="CONTACT" path='/contact' key={key++}/>)
 
         return (
         <div className={`Header Blink`}>
