@@ -8,6 +8,7 @@ import Albums from './components/albums/Albums';
 import AlbumExpanded from './components/albums/AlbumExpanded';
 import NoMatch from './NoMatch';
 import {Route, Switch} from "react-router-dom";
+import Associate from './components/associate/Associate';
 
 
 class App extends Component {
@@ -20,6 +21,7 @@ class App extends Component {
             <Route exact path="/" component={Home}/>
             <Route exact path="/contact" component={Contact}/>
             <Route exact path="/albums" component={Albums}/>
+            <Route exact path="/associate" component={Associate}/>
             <Route path="/albums/view/:albumKey" component={AlbumExpanded}/>
             <Route component={NoMatch}/>
           </Switch>

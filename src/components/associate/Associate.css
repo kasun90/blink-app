@@ -1,0 +1,38 @@
+.Associate-main-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.Associate-video-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -5;
+}
+
+.Associate-video {
+    width: 100%;
+    height: 100%;
+}
+
+.Associate-empty {
+    width: 100%;
+    height: 100vh;
+}
+
+.Associate-paragraph {
+    padding: 3em;
+    background-color: white;
+    text-align: center;
+}
+
+.Associate-parallax {
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 100vh;
+}
