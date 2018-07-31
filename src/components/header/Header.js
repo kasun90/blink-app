@@ -5,22 +5,17 @@ import './../../common/Colors.css';
 import HeaderButton from './HeaderButton';
 import HeaderHamButton from './HeaderHamButton';
 import HeaderMobileMenu from './HeaderMobileMenu';
-import {withRouter} from 'react-router-dom';
+import {withRouter, NavLink} from 'react-router-dom';
 
 class Header extends Component {
 
     constructor(props) {
         super(props)
-        this.onHomeClick = this.onHomeClick.bind(this);
         this.onHamToggle = this.onHamToggle.bind(this);
 
         this.state = {
             toggleClass: ''
         }
-    }
-
-    onHomeClick() {
-        this.props.history.push('/');
     }
 
     onHamToggle() {
@@ -39,9 +34,13 @@ class Header extends Component {
 
         return (
         <div className={`Header Blink`}>
+            
             <div className="Logo-container">
-                    <img src={logo} onClick={this.onHomeClick} className="Logo" alt="logo" />
+                <NavLink to='/' style={{width: '100%', height: '100%'}}>
+                    <img src={logo} className="Logo" alt="logo"/>
+                </NavLink>
             </div>
+            
             <div className="Header-button-container">
                 {buttons}
                           
