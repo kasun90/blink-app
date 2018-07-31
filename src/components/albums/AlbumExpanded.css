@@ -112,4 +112,8 @@
     .AlbumExp-header-desc {
         font-size: 1em;
     }
+
+    .AlbumExp-image-image {
+        pointer-events: none;
+    }
 }
