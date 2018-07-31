@@ -22,7 +22,7 @@ class MoreAbout extends Component {
                 If you like to join as a mentor or someone who is willing to learn, you are most welcome.
                 <br/><br/>
                 Also I love pull requests. Check the project on GitHub. I'm open for suggestions and critics.
-                <br/>
+                <br/><br/>
                 Powered by
                 </div>
                 <img src={blinkr} className="blinkr-logo" alt="blinkr"/>
