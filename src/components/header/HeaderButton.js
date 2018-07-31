@@ -1,15 +1,16 @@
 import React, { Component } from 'react';
 import './Header.css';
 import './../../common/Colors.css';
+import {NavLink} from 'react-router-dom';
 
 class HeaderButton extends Component {
     render() {
         return (
+            <NavLink style={{ textDecoration: 'none', color: 'inherit'}} to={this.props.path}> 
             <div className="Header-button">
-                <a role="button" onClick={this.props.onClick}>
                 {this.props.name}
-                </a>
             </div>
+            </NavLink>
         );
     }
 }
