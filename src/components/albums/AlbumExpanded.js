@@ -14,6 +14,7 @@ class AlbumExpanded extends WithNetwork {
         super(props);
         this.onBack = this.onBack.bind(this);
         this.onPhotoSelect = this.onPhotoSelect.bind(this);
+        this.onCloseSlideShow = this.onCloseSlideShow.bind(this);
         this.state = {
             noAlbum : false,
             album : undefined,
@@ -56,6 +57,13 @@ class AlbumExpanded extends WithNetwork {
         });
     }
 
+    onCloseSlideShow() {
+        this.setState({
+            selectedIndex: undefined,
+            openShow: false
+        });
+    }
+
     render() {
         if (this.state.noAlbum || this.state.album === undefined) {
             return(<NoAlbum/>);
@@ -83,7 +91,7 @@ class AlbumExpanded extends WithNetwork {
                 </div>
                 <BlinkButton className="AlbumExp-back-button" onClick={this.onBack}>Back to Albums</BlinkButton>
             </div>
-            {this.state.openShow && <AlbumSlideShow photos={this.state.album.photos} selectedIndex={this.state.selectedIndex}/>}
+            {this.state.openShow && <AlbumSlideShow photos={this.state.album.photos} selectedIndex={this.state.selectedIndex} onClose={this.onCloseSlideShow}/>}
         </div>);
     }
 }
