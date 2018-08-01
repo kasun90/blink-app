@@ -10,6 +10,7 @@ class Associate extends Component {
 
     componentDidMount() {
         window.scroll(0,0);
+        // rxTgDK-disY
     }
 
     render() {
@@ -17,7 +18,7 @@ class Associate extends Component {
         <div className={`Associate-main-container Blink`}>
             <div className="Associate-video-container">
                 <iframe frameBorder="0" title="sdf" className="Associate-video"
-                src="https://www.youtube.com/embed/rxTgDK-disY?rel=0&amp;autoplay=1&loop=1&playlist=rxTgDK-disY&controls=0&showinfo=0&autohide=1&mute=1" allowFullScreen></iframe>
+                src="https://www.youtube.com/embed/DvwnuFhvlYA?rel=0&amp;autoplay=1&loop=1&playlist=DvwnuFhvlYA&controls=0&showinfo=0&autohide=1&mute=1" allowFullScreen></iframe>
             </div>
             <div className="Associate-paragraph">
                 Nubamin is the associate of Blink. And here is the showcase of him
