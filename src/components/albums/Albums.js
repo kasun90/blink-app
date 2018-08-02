@@ -1,6 +1,7 @@
 import React from 'react';
 import './Albums.css';
 import './../../common/Colors.css';
+import './../../App.css';
 import AlbumThumbnail from './AlbumThumbnail';
 import BlinkButton from './../blinkbutton/BlinkButton';
 import WithNetwork from '../network/WithNetwork';
@@ -49,9 +50,9 @@ class Albums extends WithNetwork {
         });
 
 
-        return(<div className={`Album-container Blink`}>
-            <div className="Album-header">Albums</div>
-            <div className="Album-Seperator"/>
+        return(<div className={`Common-container Blink`}>
+            <div className="Common-title">Albums</div>
+            <div className="Common-seperator"/>
             <div className="Album-grid">
                 {albums}
             </div>
