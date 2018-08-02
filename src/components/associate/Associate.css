@@ -31,6 +31,12 @@
     width: 100%;
 }
 
+.Associate-video-title {
+    text-align: center;
+    font-size: 2em;
+    margin-bottom: 1em;
+}
+
 .Associate-empty {
     width: 100%;
     height: 50vh;
@@ -100,6 +106,10 @@
 
     .Associate-parallax {
         background-attachment: scroll;
+    }
+
+    .Associate-video-title {
+        font-size: 1.5em;
     }
 }
 
