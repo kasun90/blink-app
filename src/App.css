@@ -43,3 +43,25 @@
   text-align: center;
   overflow: auto;
 }
+
+.Common-container {
+    width: 100%;
+    margin-top: 20vh;
+    padding-right: 2em;
+    padding-left: 2em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 1em;
+}
+
+.Common-seperator {
+  width: 100%;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+  border-bottom: 1px solid;
+}
+
+.Common-title {
+  font-size: 3em;
+}

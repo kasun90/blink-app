@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
 import './Presets.css';
 import './../../common/Colors.css';
+import './../../App.css';
 
 class Presets extends Component {
     render() {
-        return(<div className={`Preset-container Blink`}>
-            <div className="Preset-header">Presets</div>
+        return(<div className={`Common-container Blink`}>
+            <div className="Common-title">Presets</div>
+            <div className="Common-seperator"/>
         </div>);
     }
 }
