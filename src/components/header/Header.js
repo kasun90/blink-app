@@ -32,6 +32,7 @@ class Header extends Component {
         buttons.push(<HeaderButton name="ALBUMS" path='/albums' key={key++}/>);
         buttons.push(<HeaderButton name="CONTACT" path='/contact' key={key++}/>);
         buttons.push(<HeaderButton name="ASSOCIATE" path='/associate' key={key++}/>);
+        buttons.push(<HeaderButton name="PRESETS" path='/presets' key={key++}/>);
 
         return (
         <div className={`Header Blink`}>
