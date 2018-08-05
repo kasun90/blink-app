@@ -1,0 +1,62 @@
+.Header-button {
+    font-size: 1em;
+    padding-right: 1em;
+    padding-left: 1em;
+    cursor: pointer;
+}
+
+/* Ham */
+
+.Header-ham-container {
+    display: inline-block;
+    cursor: pointer;
+    font-size: 0.8em;
+}
+
+.Header-ham-bar1, .Header-ham-bar2, .Header-ham-bar3 {
+    width: 2.5em;
+    height: 0.3em;
+    margin: 0.4em 0;
+    transition: 0.4s;
+}
+
+
+.Ham-change .Header-ham-bar1 {
+    -webkit-transform: rotate(-45deg) translate(-0.6em,0.4em);
+    transform: rotate(-45deg) translate(-0.6em,0.4em);
+}
+
+.Ham-change .Header-ham-bar2 {opacity: 0;}
+
+.Ham-change .Header-ham-bar3 {
+    -webkit-transform: rotate(45deg) translate(-0.5em, -0.5em);
+    transform: rotate(45deg) translate(-0.5em, -0.5em);
+}
+
+/* Ham End */
+
+/* Mobile Menu */
+
+.Header-mobile-menu-container {
+    position: absolute;
+    top: 60px;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    align-items: center;
+    transition: all 0.4s ease;
+    transform: translateX(100%);
+}
+
+.Header-mobile-menu-separator {
+    width: 90%;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    border-bottom: 1px solid;
+}
+
+.Header-mobile-animate {
+    transform: translateX(0%);
+}
+
+/* Mobile Menu End */
