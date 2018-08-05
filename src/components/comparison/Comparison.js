@@ -11,11 +11,17 @@ class Comparison extends Component {
         super(props);
         this.onResize = this.onResize.bind(this);
         this.onMouseEnter = this.onMouseEnter.bind(this);
+        this.onImageLoad = this.onImageLoad.bind(this);
+        this.onMouseMove = this.onMouseMove.bind(this);
+        this.onTouchMove = this.onTouchMove.bind(this);
+    }
+
+    onImageLoad() {
+        this.setBackgroundImage();
+        this.setBackgroundSize();
     }
 
     componentDidMount() {
-        this.setBackgroundImage();
-        this.setBackgroundSize();
         window.addEventListener('resize', this.onResize);
     }
 
@@ -43,17 +49,27 @@ class Comparison extends Component {
         this.afterImage = document.getElementById("comparison-after");
     }
 
+    onMouseMove(event) {
+        this.onMove(event.clientX);
+    }
+
+    onTouchMove(event) {
+        this.onMove(event.touches[0].clientX);
+    }
+
+    onMove(clientX) {
+        const horizontal = ((clientX - this.x) / this.width) * 100
+		this.afterImage.style.setProperty('--x', horizontal + '%')
+    }
+
     onResize() {
         this.setBackgroundSize();
     }
 
     render() {
-        return(<div onMouseEnter={this.onMouseEnter} onMouseMove={event => {
-            const horizontal = ((event.clientX - this.x) / this.width) * 100
-		    this.afterImage.style.setProperty('--x', horizontal + '%')
-        }} id="comparison-container" className="Comparison-container">
+        return(<div onMouseEnter={this.onMouseEnter} onMouseMove={this.onMouseMove} onTouchStart={this.onMouseEnter} onTouchMove={this.onTouchMove} id="comparison-container" className="Comparison-container">
             <div id="comparison-after" className="Comparison-image-after"/>
-            <img className="Comparison-image-before" src={this.props.before} alt="before"/>
+            <img className="Comparison-image-before" onLoad={this.onImageLoad} src={this.props.before} alt="before"/>
         </div>);
     }
 }
