@@ -4,26 +4,9 @@ import './Header.css';
 import './../../common/Colors.css';
 import HeaderButton from './HeaderButton';
 import HeaderHamButton from './HeaderHamButton';
-import HeaderMobileMenu from './HeaderMobileMenu';
 import {withRouter, NavLink} from 'react-router-dom';
 
 class Header extends Component {
-
-    constructor(props) {
-        super(props)
-        this.onHamToggle = this.onHamToggle.bind(this);
-
-        this.state = {
-            toggleClass: ''
-        }
-    }
-
-    onHamToggle() {
-        this.setState({
-            toggleClass: this.state.toggleClass === '' ? 'Header-mobile-animate' : ''
-        });
-    }
-
     render() {
 
         const buttons = [];
@@ -48,9 +31,8 @@ class Header extends Component {
                           
             </div>
             <div className="Header-mobile-button-container">
-                <HeaderHamButton onToggle={this.onHamToggle}/>  
+                <HeaderHamButton buttons={buttons}/>  
             </div>
-            <HeaderMobileMenu className={this.state.toggleClass} buttons={buttons}/>
         </div>
         );
     }
