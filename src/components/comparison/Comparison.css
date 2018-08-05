@@ -24,3 +24,24 @@
 	background-position: center right;
 	box-shadow: inset 1px 0 0 #fff, -1px 0 0 #fff;
 }
+
+.Comparison-label {
+    position: absolute;
+    bottom: 2%;
+    color: white;
+    transition: opacity 0.2s ease-in-out;
+}
+
+.Comparison-before {
+    left: 2%;
+}
+
+.Comparison-after {
+    right: 2%;
+}
+
+@media screen and (max-width: 400px) {
+    .Comparison-label {
+        font-size: 0.7em;
+    }
+}
