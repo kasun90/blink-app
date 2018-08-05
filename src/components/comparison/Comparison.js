@@ -6,6 +6,8 @@ class Comparison extends Component {
     x = 0;
     width = 0;
     afterImage = undefined;
+    beforeLabel = undefined;
+    afterLabel = undefined;
 
     constructor(props) {
         super(props);
@@ -22,6 +24,8 @@ class Comparison extends Component {
     }
 
     componentDidMount() {
+        this.beforeLabel = document.getElementById('label-before');
+        this.afterLabel = document.getElementById('label-after');
         window.addEventListener('resize', this.onResize);
     }
 
@@ -59,7 +63,19 @@ class Comparison extends Component {
 
     onMove(clientX) {
         const horizontal = ((clientX - this.x) / this.width) * 100
-		this.afterImage.style.setProperty('--x', horizontal + '%')
+        this.afterImage.style.setProperty('--x', horizontal + '%')
+        
+        if (horizontal < 30) {
+            this.beforeLabel.style.opacity = '0';
+        } else {
+            this.beforeLabel.style.opacity = '1';
+        }
+
+        if (horizontal > 70) {
+            this.afterLabel.style.opacity = '0';
+        } else {
+            this.afterLabel.style.opacity = '1';
+        }
     }
 
     onResize() {
@@ -70,6 +86,8 @@ class Comparison extends Component {
         return(<div onMouseEnter={this.onMouseEnter} onMouseMove={this.onMouseMove} onTouchStart={this.onMouseEnter} onTouchMove={this.onTouchMove} id="comparison-container" className="Comparison-container">
             <div id="comparison-after" className="Comparison-image-after"/>
             <img className="Comparison-image-before" onLoad={this.onImageLoad} src={this.props.before} alt="before"/>
+            <div id="label-before" className={`Comparison-label Comparison-before`}>Before</div>
+            <div id="label-after" className={`Comparison-label Comparison-after`}>After</div>
         </div>);
     }
 }
