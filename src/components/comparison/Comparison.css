@@ -22,5 +22,5 @@
     right: 0;
 	width: calc(100% - var(--x, 50%));
 	background-position: center right;
-	box-shadow: inset 2px 0 0 #fff, -2px 0 0 #fff;
+	box-shadow: inset 1px 0 0 #fff, -1px 0 0 #fff;
 }
