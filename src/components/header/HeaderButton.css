@@ -1,9 +1,39 @@
+/* Header Button */
+
 .Header-button {
     font-size: 1em;
     padding-right: 1em;
     padding-left: 1em;
     cursor: pointer;
 }
+
+.Header-dropdown-content {
+    display: none;
+    color: white;
+    position: absolute;
+    width: 200%;
+    right: 0;
+}
+
+.Header-dropdown-content div {
+    padding: 0.5em 1em;
+    text-align: left;
+}
+
+.Header-dropdown-content div:hover {
+    background-color: #f44e4e;
+}
+
+.Header-dropdown {
+    position: relative;
+}
+
+
+.Header-dropdown:hover .Header-dropdown-content {
+    display: block;
+}
+
+/* Header Button End */
 
 /* Ham */
 
