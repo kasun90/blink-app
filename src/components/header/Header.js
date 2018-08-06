@@ -9,13 +9,22 @@ import {withRouter, NavLink} from 'react-router-dom';
 class Header extends Component {
     render() {
 
+        const buttonData = [];
+
+        buttonData.push({name: 'ALBUMS', path: '/albums'});
+        buttonData.push({name: 'CONTACT', path: '/contact'});
+        buttonData.push({name: 'ASSOCIATE', path: '/associate'});
+        buttonData.push({name: 'BROWSE', dropDown: true, children: [
+            {name: 'PRESETS', path: '/presets'},
+            {name: 'TECH', path: '/albums'}
+        ]});
+        
+
         const buttons = [];
 
-        var key = 0;
-        buttons.push(<HeaderButton name="ALBUMS" path='/albums' key={key++}/>);
-        buttons.push(<HeaderButton name="CONTACT" path='/contact' key={key++}/>);
-        buttons.push(<HeaderButton name="ASSOCIATE" path='/associate' key={key++}/>);
-        buttons.push(<HeaderButton name="PRESETS" path='/presets' key={key++}/>);
+        for(var i = 0; i < buttonData.length; i++) {
+            buttons.push(<HeaderButton data={buttonData[i]} key={i}/>);
+        }
 
         return (
         <div className={`Header Blink`}>
