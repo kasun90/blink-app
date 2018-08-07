@@ -6,12 +6,26 @@
     cursor: pointer;
 }
 
-.Header-dropdown-content {
+.Header-button-container .Header-dropdown-content {
     display: none;
     color: white;
     position: absolute;
     width: 200%;
     right: 0;
+}
+
+.Header-mobile-button-container .Header-dropdown-content {
+    display: none;
+    width: 100%;
+}
+
+.Header-mobile-button-container .Header-dropdown {
+    width: 100%;
+    text-align: center;
+}
+
+.Header-mobile-button-container .Header-dropdown div {
+    text-align: center;
 }
 
 .Header-dropdown-content div {

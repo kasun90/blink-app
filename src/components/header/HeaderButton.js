@@ -21,7 +21,9 @@ class HeaderButton extends Component {
             
             return(
                 <div className="Header-dropdown">
-                    <div className="Header-button">
+                    <div className="Header-button" onClick={(event) => {
+                        event.stopPropagation();
+                    }}>
                         {this.props.data.name}
                     </div>
                     <div className={`Header-dropdown-content Blink-background`}>
