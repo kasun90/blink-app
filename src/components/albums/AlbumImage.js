@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './AlbumExpanded.css';
+import BlinkImage from '../blinkImage/BlinkImage';
 
 class AlbumImage extends Component {
     
@@ -15,8 +16,8 @@ class AlbumImage extends Component {
     }
     
     render() {
-        return(<div className="AlbumExp-image-container">
-            <img className="AlbumExp-image-image" src={this.props.src} alt="album_image" onClick={this.onSelect}/>
+        return(<div className="AlbumExp-image-container" onClick={this.onSelect}>
+            <BlinkImage className="AlbumExp-image-image" src={this.props.src}/>
         </div>);
     }
 }
