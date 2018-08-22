@@ -1,0 +1,11 @@
+.Blink-image-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    opacity: 0;
+    transition: opacity 0.5s ease-in;
+}
+
+.Blink-image-load {
+    opacity: 1;
+}
