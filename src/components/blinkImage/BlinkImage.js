@@ -3,6 +3,8 @@ import './BlinkImage.css';
 
 class BlinkImage extends Component {
 
+    isImageMounted = true;
+
     constructor(props) {
         super(props);
         this.state = {
@@ -12,9 +14,19 @@ class BlinkImage extends Component {
     }
 
     onImageLoad() {
-        this.setState({
-            imageLoad: 'Blink-image-load'
-        });
+        if (this.isImageMounted) {
+            this.setState({
+                imageLoad: 'Blink-image-load'
+            });
+        }
+    }
+
+    componentWillUnmount() {
+        this.isImageMounted = false;
+    }
+
+    componentDidMount() {
+        this.isImageMounted = true;
     }
 
     render() {
