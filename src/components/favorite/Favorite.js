@@ -16,6 +16,9 @@ import Colors from './../../common/Colors';
 
 class Favorite extends Component {
 
+    isContainerMounted = true;
+    loadedImages = 0;
+
     constructor(props) {
         super(props);
         this.carousel = this.carousel.bind(this);
@@ -28,16 +31,16 @@ class Favorite extends Component {
     }
 
     componentDidMount() {
+        this.isContainerMounted = true;
         this.index = 0;
         this.prepareCarousel();
-        this.carousel();
     }
 
     prepareCarousel() {
         var imageDivs = document.getElementsByClassName("Favorite-carousel");
         
         for (var i = 0; i < imageDivs.length; i++) {
-            imageDivs[i].style.backgroundImage = "url('".concat(this.imagesToLoad[i]).concat("')");
+            imageDivs[i].style.opacity = "0";
         }
     }
 
@@ -64,6 +67,22 @@ class Favorite extends Component {
 
     componentWillUnmount() {
         clearTimeout(this.timer);
+        this.isContainerMounted = false;
+    }
+
+    onImageLoad(htmlID, index) {
+        var imageDiv = document.getElementById(htmlID);
+        imageDiv.style.backgroundImage = "url('".concat(this.imagesToLoad[index]).concat("')");
+        this.loadedImages++;
+
+        if (this.loadedImages === this.imagesToLoad.length) {
+            var imageDivs = document.getElementsByClassName("Favorite-carousel");
+        
+            for (var i = 0; i < imageDivs.length; i++) {
+                imageDivs[i].style.opacity = "1";
+            }
+            this.carousel();
+        }
     }
 
     render() {
@@ -71,7 +90,11 @@ class Favorite extends Component {
         var imageDivs = [];
 
         for (var i = 0; i < this.imagesToLoad.length; i++) {
-            imageDivs.push(<div className="Favorite-carousel" key={i}></div>)
+            const imageID = `carousel-${i}`
+            const image = new Image();
+            image.src = this.imagesToLoad[i];
+            image.onload = this.onImageLoad.bind(this, imageID, i)
+            imageDivs.push(<div id={imageID} className="Favorite-carousel" key={i}></div>)
         }
 
         return (
