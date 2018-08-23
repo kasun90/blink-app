@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './Contact.css';
 import './../../common/Colors.css';
 import profile from './img/profile.jpg';
+import BlinkImage from '../blinkImage/BlinkImage';
 
 class AboutMe extends Component {
     render() {
@@ -17,7 +18,7 @@ class AboutMe extends Component {
                 </div>
             </div>
             <div className={`AboutMe-image-container Blink`}>
-                <img className="AboutMe-image" src={profile} alt='profile'/>
+                <BlinkImage className="AboutMe-image" src={profile}/>
             </div>
         </div>);
     }
