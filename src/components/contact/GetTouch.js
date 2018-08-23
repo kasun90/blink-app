@@ -6,6 +6,7 @@ import BlinkTextField from './../blinktextfield/BlinkTextField';
 import BlinkButton from './../blinkbutton/BlinkButton';
 import WithNetwork from './../network/WithNetwork';
 import BlinkModal from './../blinkModal/BlinkModal';
+import BlinkImage from '../blinkImage/BlinkImage';
 
 class GetTouch extends WithNetwork {
 
@@ -93,7 +94,7 @@ class GetTouch extends WithNetwork {
     render() {
         return(<div className="GetTouch-container">
             <div className={`GetTouch-image-container Blink`}>
-                <img src={getTouchImage} className="GetTouch-image" alt="getintouch"/>
+                <BlinkImage className="GetTouch-image" src={getTouchImage}/>
             </div>
             <div className={`GetTouch-form-container Blink`}>
                 <div className="GetTouch-header">Get In Touch</div>
