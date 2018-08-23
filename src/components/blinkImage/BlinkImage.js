@@ -31,7 +31,7 @@ class BlinkImage extends Component {
 
     render() {
         return(<div className={`${this.props.className}`}>
-            <img className={`Blink-image-image ${this.state.imageLoad}`} src={this.props.src} alt="blink-image" onLoad={this.onImageLoad}/>
+            <img className={`Blink-image-image ${this.state.imageLoad}`} src={this.props.src} alt="blink" onLoad={this.onImageLoad}/>
         </div>);
     }
 }
