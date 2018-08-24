@@ -16,7 +16,7 @@ class Header extends Component {
         buttonData.push({name: 'ASSOCIATE', path: '/associate'});
         buttonData.push({name: 'BROWSE', dropDown: true, children: [
             {name: 'PRESETS', path: '/presets'},
-            {name: 'TECH', path: '/albums'},
+            {name: 'TECH', path: '/tech'},
             {name: 'ARTICLES', path: '/articles'}
         ]});
         
