@@ -11,6 +11,7 @@ import {Route, Switch} from "react-router-dom";
 import Associate from './components/associate/Associate';
 import Presets from './components/presets/Presets';
 import Articles from './components/articles/Articles';
+import Tech from './components/tech/Tech';
 
 
 class App extends Component {
@@ -27,6 +28,7 @@ class App extends Component {
             <Route exact path="/presets" component={Presets}/>
             <Route path="/albums/view/:albumKey" component={AlbumExpanded}/>
             <Route exact path="/articles" component={Articles}/>
+            <Route exact path="/tech" component={Tech}/>
             <Route component={NoMatch}/>
           </Switch>
           <Footer/>
