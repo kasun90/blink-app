@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import './PresetElement.css';
 import Comparison from '../comparison/Comparison';
-import BlinkButton from './../blinkbutton/BlinkButton';
 
 class PresetElement extends Component {
     render() {
@@ -10,7 +9,9 @@ class PresetElement extends Component {
             <div style={{marginTop: '1vh', marginBottom: '1vh'}}>
                 <Comparison before={this.props.data.beforeImage.url} after={this.props.data.afterImage.url}/>
             </div>
-            <BlinkButton>Download</BlinkButton>
+            <a href={this.props.data.templateFile.url} 
+            style={{color: 'inherit', fontSize: '1.5em'}} 
+            download>Download</a>
         </div>);
     }
 }
