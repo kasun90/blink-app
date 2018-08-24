@@ -6,9 +6,17 @@
     width: 50%;
 }
 
+.Preset-show-more {
+    font-size: 2em;
+}
+
 
 @media screen and (max-width: 60em) {
     .Preset-container {
         width: 90%;
+    }
+
+    .Preset-show-more {
+        font-size: 1.5em;
     }
 }

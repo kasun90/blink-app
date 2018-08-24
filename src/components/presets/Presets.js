@@ -1,19 +1,57 @@
-import React, { Component } from 'react';
+import React from 'react';
+import WithNetwork from './../network/WithNetwork';
 import './Presets.css';
 import './../../common/Colors.css';
 import './../../App.css';
-import before from './img/before.jpg';
-import after from './img/after.jpg';
 import PresetElement from './PresetElement';
+import BlinkButton from '../blinkbutton/BlinkButton';
 
-class Presets extends Component {
-    render() {
-        let _data = {
-            name: "Allure",
-            before: before,
-            after: after
+class Presets extends WithNetwork {
+
+    limit = 10;
+    timestamp = 0;
+
+    constructor(props) {
+        super(props);
+        this.onShowMore = this.onShowMore.bind(this);
+        this.state = {
+            presets: [],
+            hasMore: false
         }
+    }
 
+    componentDidMount() {
+        window.scroll(0,0);
+        this.requestPresets(this.timestamp, true, this.limit);
+    }
+
+    requestPresets(timestamp, less, limit) {
+        var req = WithNetwork.buildMessage('com.blink.shared.client.preset.PresetsRequestMessage');
+        req.timestamp = timestamp;
+        req.less = less;
+        req.limit = limit;
+
+        this.send(req, (response, error) => {
+            if (error === undefined) {
+                const _presets = Array.from(response.presets);
+                this.setState({
+                    presets: this.state.presets.concat(_presets.map((value) => {
+                        if (this.timestamp === 0 || this.timestamp < value.timestamp) {
+                            this.timestamp = value.timestamp;
+                        }
+                        return <PresetElement key={value.timestamp} data={value}/>
+                    })),
+                    hasMore: _presets.length === this.limit
+                });
+            }
+        });
+    }
+
+    onShowMore() {
+        this.requestPresets(this.timestamp, true, this.limit);
+    }
+
+    render() {
         return(<div className={`Common-container Blink`}>
             <div className="Common-title">Presets</div>
             <div className="Common-seperator"/>
@@ -21,8 +59,9 @@ class Presets extends Component {
                 <i>Hover or drag on the image to move the slider</i>
             </div>
             <div className="Preset-container">
-                <PresetElement data={_data}/>
+                {this.state.presets}
             </div>
+            {this.state.hasMore && <BlinkButton className="Preset-show-more" >Show More</BlinkButton>}
         </div>);
     }
 }
