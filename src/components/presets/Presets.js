@@ -36,7 +36,7 @@ class Presets extends WithNetwork {
                 const _presets = Array.from(response.presets);
                 this.setState({
                     presets: this.state.presets.concat(_presets.map((value) => {
-                        if (this.timestamp === 0 || this.timestamp < value.timestamp) {
+                        if (this.timestamp === 0 || this.timestamp > value.timestamp) {
                             this.timestamp = value.timestamp;
                         }
                         return <PresetElement key={value.timestamp} data={value}/>
@@ -61,7 +61,7 @@ class Presets extends WithNetwork {
             <div className="Preset-container">
                 {this.state.presets}
             </div>
-            {this.state.hasMore && <BlinkButton className="Preset-show-more" >Show More</BlinkButton>}
+            {this.state.hasMore && <BlinkButton className="Preset-show-more" onClick={this.onShowMore}>Show More</BlinkButton>}
         </div>);
     }
 }
