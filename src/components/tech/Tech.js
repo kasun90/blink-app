@@ -8,6 +8,9 @@ class Tech extends Component {
         return(<div className={`Common-container Blink`}>
             <div className="Common-title">Tech</div>
             <div className="Common-seperator"/>
+            <div className="Blink-paragraph">
+                
+            </div>
         </div>);
     }
 }
