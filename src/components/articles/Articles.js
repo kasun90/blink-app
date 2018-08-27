@@ -8,6 +8,7 @@ class Articles extends Component {
         return(<div className={`Common-container Blink`}>
             <div className="Common-title">Articles</div>
             <div className="Common-seperator"/>
+            <div className="Article-container"></div>
         </div>);
     }
 }
