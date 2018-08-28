@@ -46,7 +46,7 @@
 
 .Common-container {
     width: 100%;
-    margin-top: 20vh;
+    margin-top: 10em;
     padding-right: 1vw;
     padding-left: 1vw;
     display: flex;
@@ -64,4 +64,8 @@
 
 .Common-title {
   font-size: 3em;
+}
+
+.Common-title-medium {
+  font-size: 2em;
 }

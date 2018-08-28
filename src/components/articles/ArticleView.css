@@ -1,0 +1,11 @@
+.ArticleView-container {
+    width: 70%;
+    min-height: 100vh;
+    margin-top: 3em;
+}
+
+@media screen and (max-width: 60em) {
+    .ArticleView-container {
+        width: 90%;
+    }
+}
