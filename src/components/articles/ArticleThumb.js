@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './ArticleThumb.css';
 import './../../common/Colors.css';
-import {Link, withRouter} from 'react-router-dom';
+import {withRouter} from 'react-router-dom';
 
 class ArticleThumb extends Component {
 
@@ -29,12 +29,12 @@ class ArticleThumb extends Component {
     render() {
         const _data = this.props.data;
         return(<div className="ArticleThumb-container">
-            <Link style={{ textDecoration: 'none', color: 'inherit'}} to={`${this.props.match.path}/${_data.key}`}> 
+            <a style={{textDecoration: 'none'}} href={`${this.props.match.path}/${_data.key}`}> 
                 <div className={`ArticleThumb-title ${this.state.titleClass}`}
                 onMouseOver={this.onMouseOver}
                 onMouseOut={this.onMouseOut}
                 >{_data.title}</div>
-            </Link>
+            </a>
             <div className="ArticleThumb-info Blink-paragraph">{_data.views} views . Posted {_data.date} . By {_data.author}</div>
         </div>);
     }

@@ -55,9 +55,12 @@ class Presets extends WithNetwork {
         return(<div className={`Common-container Blink`}>
             <div className="Common-title">Presets</div>
             <div className="Common-seperator"/>
-            <div style={{fontSize: '0.8em'}}>
+            <div>
                 <i>Hover or drag on the image to move the slider</i>
             </div>
+            <a style={{marginTop: '1em', color: 'inherit'}} href="/articles/how-to-install-custom-presets-on-lightroom">
+                <strong>How to install presets</strong>
+            </a>
             <div className="Preset-container">
                 {this.state.presets}
             </div>
