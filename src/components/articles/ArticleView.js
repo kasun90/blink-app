@@ -18,6 +18,7 @@ class ArticleView extends Component {
 
         return(<div className={`Common-container Blink`}>
             <div className="Common-title-medium">{_data.title}</div>
+            <div style={{fontSize: '0.8em'}}>{_data.views} views . Posted {_data.date} . By {_data.author}</div>
             <div className="Common-seperator"/>
             <div className="ArticleView-container Blink-paragraph">
                 <p>You should be having a compressed preset file downloaded from the <a className="Blink" href="/presets">presets</a> page 
