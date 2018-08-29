@@ -7,6 +7,14 @@ import howto from './img/howto.jpg';
 import BlinkImage from '../blinkImage/BlinkImage';
 
 class ArticleView extends Component {
+
+
+    componentDidUpdate() {
+        if (window.FB) {
+            window.FB.XFBML.parse();
+        }
+    }
+
     render() {
         const _data = {
             title: 'How to install custom presets on Lightroom',
@@ -49,6 +57,7 @@ class ArticleView extends Component {
                     <li>Restart Lightroom</li>
                 </ol>
             </div>
+            <div className="fb-comments" data-href={window.location.href} data-numposts="5"></div>
         </div>);
     }
 }
