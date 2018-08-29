@@ -1,6 +1,7 @@
 import React from 'react';
 import './AlbumExpanded.css';
 import './../../common/Colors.css';
+import './../../App.css';
 import AlbumImage from './AlbumImage';
 import NoAlbum from './NoAlbum';
 import BlinkButton from './../blinkbutton/BlinkButton';
@@ -20,6 +21,12 @@ class AlbumExpanded extends WithNetwork {
             album : undefined,
             openShow: false,
             selectedIndex: undefined
+        }
+    }
+
+    componentDidUpdate() {
+        if (window.FB) {
+            window.FB.XFBML.parse();
         }
     }
 
@@ -69,7 +76,6 @@ class AlbumExpanded extends WithNetwork {
             return(<NoAlbum/>);
         }
 
-
         const photos = [];
         const _photos = this.state.album.photos;
         for (var i = 0; i < _photos.length ; i ++) {
@@ -90,6 +96,7 @@ class AlbumExpanded extends WithNetwork {
                     {photos}
                 </div>
                 <BlinkButton className="AlbumExp-back-button" onClick={this.onBack}>Back to Albums</BlinkButton>
+                <div className="fb-comments" data-href={window.location.href} data-numposts="5"></div>
             </div>
             {this.state.openShow && <AlbumSlideShow photos={this.state.album.photos} selectedIndex={this.state.selectedIndex} onClose={this.onCloseSlideShow}/>}
         </div>);
