@@ -2,7 +2,7 @@ This is the project for [Blink](http://justblink.xyz)'s web front end.
 
 ## Introduction
 
-Currently, this app is serverless and self-contained.<br>
+This app is powered by [Blinkr](https://github.com/kasun90/blinkr)<br>
 You can experiment as you wish. Send a pull request if you would like to contribute.
 
 ## Development
@@ -16,8 +16,7 @@ npm start
 
 ## Major TODOs
 
-* Implement server side rendering for dynamic html content
-* Implement separate file server to serve images and other static content
+* Implement dynamic text generation for articles
 
 ## Issue Tracker
 
