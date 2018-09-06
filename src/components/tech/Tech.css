@@ -1,0 +1,15 @@
+.Tech-container {
+    width: 70%;
+    min-height: 100vh;
+    text-align: justify;
+}
+
+.Tech-image {
+    width: 100%;
+}
+
+@media screen and (max-width: 60em) {
+    .Tech-container {
+        width: 95%;
+    }
+  }

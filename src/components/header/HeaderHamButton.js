@@ -1,13 +1,15 @@
 import React, { Component } from 'react';
-import './Header.css';
+import './HeaderButton.css';
 import './../../common/Colors.css';
+import HeaderMobileMenu from './HeaderMobileMenu';
 
 class HeaderHamButton extends Component {
 
     constructor(props) {
         super(props);
         this.state = {
-            changeClass: ''
+            changeClass: '',
+            menuAnimateClass: ''
         };
 
         this.toggleClass = this.toggleClass.bind(this);
@@ -15,12 +17,9 @@ class HeaderHamButton extends Component {
 
     toggleClass() {
         this.setState({
-            changeClass: this.state.changeClass === '' ? 'Ham-change' : ''
+            changeClass: this.state.changeClass === '' ? 'Ham-change' : '',
+            menuAnimateClass: this.state.menuAnimateClass === '' ? 'Header-mobile-animate' : ''
         });
-        
-        if (this.props.onToggle) {
-            this.props.onToggle();
-        }
     }
 
     render() {
@@ -29,6 +28,7 @@ class HeaderHamButton extends Component {
                 <div className={`Header-ham-bar1 Blink-background`}/>
                 <div className={`Header-ham-bar2 Blink-background`}/>
                 <div className={`Header-ham-bar3 Blink-background`}/>
+                <HeaderMobileMenu className={this.state.menuAnimateClass} buttons={this.props.buttons}/>
             </div>
         );
     }

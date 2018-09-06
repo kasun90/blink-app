@@ -4,62 +4,45 @@ import './Header.css';
 import './../../common/Colors.css';
 import HeaderButton from './HeaderButton';
 import HeaderHamButton from './HeaderHamButton';
-import HeaderMobileMenu from './HeaderMobileMenu';
-import {withRouter} from 'react-router-dom';
+import {withRouter, NavLink} from 'react-router-dom';
 
 class Header extends Component {
-
-    constructor(props) {
-        super(props)
-        this.onAlbumsClick = this.onAlbumsClick.bind(this);
-        this.onContactClick = this.onContactClick.bind(this);
-        this.onHomeClick = this.onHomeClick.bind(this);
-        this.onHamToggle = this.onHamToggle.bind(this);
-
-        this.state = {
-            toggleClass: ''
-        }
-    }
-
-    onAlbumsClick() {
-        this.props.history.push('/albums');
-    }
-
-    onContactClick() {
-        this.props.history.push('/contact');
-    }
-
-    onHomeClick() {
-        this.props.history.push('/');
-    }
-
-    onHamToggle() {
-        this.setState({
-            toggleClass: this.state.toggleClass === '' ? 'Header-mobile-animate' : ''
-        });
-    }
-
     render() {
+
+        const buttonData = [];
+
+        buttonData.push({name: 'ALBUMS', path: '/albums'});
+        buttonData.push({name: 'CONTACT', path: '/contact'});
+        buttonData.push({name: 'ASSOCIATE', path: '/associate'});
+        buttonData.push({name: 'BROWSE', dropDown: true, children: [
+            {name: 'PRESETS', path: '/presets'},
+            {name: 'TECH', path: '/tech'},
+            {name: 'ARTICLES', path: '/articles'}
+        ]});
+        
 
         const buttons = [];
 
-        var key = 0;
-        buttons.push(<HeaderButton name="ALBUMS" onClick={this.onAlbumsClick} key={key++}/>);
-        buttons.push(<HeaderButton name="CONTACT" onClick={this.onContactClick} key={key++}/>)
+        for(var i = 0; i < buttonData.length; i++) {
+            buttons.push(<HeaderButton data={buttonData[i]} key={i}/>);
+        }
 
         return (
         <div className={`Header Blink`}>
+            
             <div className="Logo-container">
-                    <img src={logo} onClick={this.onHomeClick} className="Logo" alt="logo" />
+                <NavLink to='/' style={{width: '100%', height: '100%'}}>
+                    <img src={logo} className="Logo" alt="logo"/>
+                </NavLink>
             </div>
+            
             <div className="Header-button-container">
                 {buttons}
                           
             </div>
             <div className="Header-mobile-button-container">
-                <HeaderHamButton onToggle={this.onHamToggle}/>  
+                <HeaderHamButton buttons={buttons}/>  
             </div>
-            <HeaderMobileMenu className={this.state.toggleClass} buttons={buttons}/>
         </div>
         );
     }

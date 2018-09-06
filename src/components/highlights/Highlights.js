@@ -6,6 +6,7 @@ import fashion from './img/fashion.jpg';
 import nature2 from './img/nature2.jpg';
 import Ionicon from 'react-ionicons';
 import Colors from './../../common/Colors';
+import BlinkImage from '../blinkImage/BlinkImage';
 
 class Highlights extends Component {
     render() {
@@ -17,7 +18,7 @@ class Highlights extends Component {
             </div>
             <div className="Story-container">
                 <div className="Image-container" id="image">
-                    <img src={nature} className="Image" alt="nature" />
+                    <BlinkImage className="Image" src={nature}/>
                 </div>
                 <div className="Arrow-container" id="arrow">
                     <Ionicon icon="md-arrow-dropdown-circle" fontSize="2em" color={Colors.Blink}/>
@@ -44,12 +45,12 @@ class Highlights extends Component {
                     <Ionicon icon="md-arrow-dropdown-circle" fontSize="2em" color={Colors.Blink}/>
                 </div>
                 <div className="Image-container" id="image">
-                    <img src={fashion} className="Image" alt="fashion" />
+                    <BlinkImage className="Image" src={fashion}/>
                 </div>
             </div>
             <div className="Story-container">
                 <div className="Image-container" id="image">
-                    <img src={nature2} className="Image" alt="nature2" />
+                    <BlinkImage className="Image" src={nature2}/>
                 </div>
                 <div className="Arrow-container" id="arrow">
                     <Ionicon icon="md-arrow-dropdown-circle" fontSize="2em" color={Colors.Blink}/>

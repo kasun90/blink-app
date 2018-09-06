@@ -1,0 +1,47 @@
+* {
+    box-sizing: border-box;
+}
+
+
+.Comparison-container {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+.Comparison-image-before {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.Comparison-image-after {
+    position: absolute;
+    height: 100%;
+    right: 0;
+	width: calc(100% - var(--x, 50%));
+	background-position: center right;
+	box-shadow: inset 1px 0 0 #fff, -1px 0 0 #fff;
+}
+
+.Comparison-label {
+    position: absolute;
+    bottom: 2%;
+    color: white;
+    transition: opacity 0.2s ease-in-out;
+}
+
+.Comparison-before {
+    left: 2%;
+}
+
+.Comparison-after {
+    right: 2%;
+}
+
+@media screen and (max-width: 400px) {
+    .Comparison-label {
+        font-size: 0.7em;
+    }
+}

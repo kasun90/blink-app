@@ -1,0 +1,125 @@
+.Associate-main-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.Associate-main-video {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 5%;
+}
+
+.Associate-main-video-container {
+    width: 50%;
+    height: auto;
+}
+
+.Associate-video-container {
+    position: relative;
+    padding-bottom: 56.25%;
+    width: 100%;
+}
+
+.Associate-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+}
+
+.Associate-video-title {
+    text-align: center;
+    font-size: 2em;
+    margin-bottom: 1em;
+}
+
+.Associate-empty {
+    width: 100%;
+    height: 50vh;
+}
+
+.Associate-paragraph {
+    padding: 3em;
+    background-color: white;
+    text-align: center;
+}
+
+.Associate-parallax {
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 80vh;
+}
+
+.Associate-profile-container {
+    margin-top: calc(60px + 10vh);
+    margin-bottom: 50px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.Associate-profile-image-container {
+    width: 300px;
+    height: 300px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 50%;
+}
+
+.Associate-profile-image {
+    display: block;
+    margin: 0 auto;
+    margin-left: -25%;
+    height: 100%;
+    width: auto;
+}
+
+.Associate-profile-text {
+    padding-left: 5%;
+    text-align: center;
+}
+
+.Associate-profile-text  span {
+    font-size: 3em;
+}
+
+@media screen and (max-width: 60em) {
+    .Associate-main-video-container {
+        width: 90%;
+    }
+
+    .Associate-profile-container {
+        flex-direction: column;
+    }
+
+    .Associate-profile-text {
+        padding-top: 1em;
+        padding-left: 0;
+    }
+
+    .Associate-parallax {
+        background-attachment: scroll;
+    }
+
+    .Associate-video-title {
+        font-size: 1.5em;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .Associate-profile-image-container {
+        width: 200px;
+        height: 200px;
+    }
+
+    .Associate-profile-text  span {
+        font-size: 2em;
+    }
+}

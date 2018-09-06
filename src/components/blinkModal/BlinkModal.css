@@ -1,0 +1,30 @@
+.Blink-modal-container {
+    width: 100%;
+    height: 100vh;
+    background-color: rgb(255, 255, 255, 0.5);
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    z-index: 5;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.Blink-modal-sub-container {
+    border: 1px solid;
+}
+
+.Blink-modal-item-container {
+    margin: 1em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.Blink-modal-text-container {
+    margin-bottom: 0.5em;
+}
