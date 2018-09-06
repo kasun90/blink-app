@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './Albums.css';
 import {withRouter} from 'react-router-dom';
+import BlinkImage from './../blinkImage/BlinkImage';
 
 class AlbumThumbnail extends Component {
 
@@ -16,8 +17,8 @@ class AlbumThumbnail extends Component {
 
 
     render() {
-        return(<div className="Album-thumbnail-container">
-                <img className="Album-thumbnail-image" src={require(`${this.props.src}`)} alt="thumbnail" onClick={this.onAlbumView}/>
+        return(<div className="Album-thumbnail-container" onClick={this.onAlbumView}>
+                <BlinkImage className="Album-thumbnail-image" src={this.props.src}/>
             <div className="Album-name-text">{this.props.albumName}</div>
         </div>);
     }

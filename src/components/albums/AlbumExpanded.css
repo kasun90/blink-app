@@ -4,7 +4,12 @@
 
 .AlbumExp-container {
     width: 100%;
-    margin-top: 20vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.AlbumExp-sub-container {
     padding-right: 2vw;
     padding-left: 2vw;
     display: flex;
@@ -13,7 +18,25 @@
 }
 
 .AlbumExp-header {
+    height: 50vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    background-size: cover;
+    background-position: center;
+    background-color: rgba(255, 255, 255, 0.5)!important;
+    background-blend-mode: color;
+}
+
+.AlbumExp-header-title {
     font-size: 3em;
+}
+
+.AlbumExp-header-desc {
+    font-size: 1.2em;
+    margin-bottom: 1em;
 }
 
 .AlbumExp-Seperator {
@@ -32,6 +55,7 @@
 
 .AlbumExp-back-button {
     font-size: 2em;
+    margin-bottom: 1em;
 }
 
 /* Image */
@@ -51,6 +75,7 @@
     height: auto;
     display: block;
     border: 1px solid;
+    cursor: pointer;
 }
 
 
@@ -63,6 +88,10 @@
     justify-content: center;
     font-size: 2em;
 }
+
+.fb-comments, .fb-comments span, .fb-comments.fb_iframe_widget span iframe {
+    width: 100% !important;
+  }
 
 @media screen and (max-width: 100em) {
 
@@ -79,5 +108,17 @@
 
     .NoAlbum-container {
         font-size: 1em;
+    }
+
+    .AlbumExp-header-title {
+        font-size: 2em;
+    }
+
+    .AlbumExp-header-desc {
+        font-size: 1em;
+    }
+
+    .AlbumExp-image-image {
+        pointer-events: none;
     }
 }

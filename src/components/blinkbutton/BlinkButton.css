@@ -12,3 +12,8 @@
     background-color: #f55d5d;
     color: white;
 }
+
+.Blink-button-disabled {
+    pointer-events: none;
+    opacity: 0.5;
+}

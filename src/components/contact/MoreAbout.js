@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import './Contact.css';
 import './../../common/Colors.css';
-import Ionicon from 'react-ionicons';
 import BlinkButton from './../blinkbutton/BlinkButton';
+import blinkr from './img/blinkr.svg';
 
 class MoreAbout extends Component {
 
@@ -12,7 +12,7 @@ class MoreAbout extends Component {
     }
 
     onView() {
-        window.open("https://github.com/kasun90/blink-app", "_blank");
+        window.open("https://github.com/kasun90/blinkr", "_blank");
     }
 
     render() {
@@ -22,8 +22,10 @@ class MoreAbout extends Component {
                 If you like to join as a mentor or someone who is willing to learn, you are most welcome.
                 <br/><br/>
                 Also I love pull requests. Check the project on GitHub. I'm open for suggestions and critics.
+                <br/><br/>
+                Powered by
                 </div>
-                <Ionicon className="MoreAbout-icon" icon="logo-github" fontSize="1.5em"/>
+                <img src={blinkr} className="blinkr-logo" alt="blinkr"/>
                 <BlinkButton onClick={this.onView}>View On GitHub</BlinkButton>
             </div>
         );
