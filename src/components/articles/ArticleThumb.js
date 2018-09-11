@@ -28,6 +28,8 @@ class ArticleThumb extends Component {
 
     render() {
         const _data = this.props.data;
+        const date = new Date(_data.timestamp);
+        var options = {year: 'numeric', month: 'long', day: 'numeric', hour: '2-digit', minute: '2-digit', second: '2-digit'};
         return(<div className="ArticleThumb-container">
             <a style={{textDecoration: 'none'}} href={`${this.props.match.path}/${_data.key}`}> 
                 <div className={`ArticleThumb-title ${this.state.titleClass}`}
@@ -35,7 +37,7 @@ class ArticleThumb extends Component {
                 onMouseOut={this.onMouseOut}
                 >{_data.title}</div>
             </a>
-            <div className="ArticleThumb-info Blink-paragraph">{_data.views} views . Posted {_data.date} . By {_data.author}</div>
+            <div className="ArticleThumb-info Blink-paragraph">{_data.views} views . Posted {date.toLocaleString('en-US', options)} . By {_data.author}</div>
         </div>);
     }
 }
