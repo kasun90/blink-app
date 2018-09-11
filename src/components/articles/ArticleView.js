@@ -3,7 +3,7 @@ import './ArticleView.css';
 import './../../App.css';
 import './../../common/Colors.css';
 import {withRouter} from 'react-router-dom';
-//import BlinkImage from '../blinkImage/BlinkImage';
+import BlinkImage from '../blinkImage/BlinkImage';
 import WithNetwork from '../network/WithNetwork';
 import NoArticle from './NoArticle';
 
@@ -92,6 +92,10 @@ class ArticleView extends WithNetwork {
                 return this.deriveParagraph(atag, index);
             case 'HEADER':
                 return this.deriveHeader(atag, index);
+            case 'NOTE':
+                return this.deriveNote(atag, index);
+            case 'IMAGE':
+                return this.deriveImage(atag, index);
             default:
                 break;
         }
@@ -118,6 +122,14 @@ class ArticleView extends WithNetwork {
     deriveHeader(atag, index) {
         const BlinkHeader = `h${atag.data.size}`;
         return <BlinkHeader key={index}>{atag.data.value}</BlinkHeader>
+    }
+
+    deriveNote(atag, index) {
+        return <div className="Blink-background" style={{color: 'white'}}><p style={{padding: '1em'}} key={index}>{atag.data.value}</p></div>
+    }
+
+    deriveImage(atag, index) {
+        return <BlinkImage className="ArticleView-image" key={index} src={atag.data.url}/>
     }
 }
 
