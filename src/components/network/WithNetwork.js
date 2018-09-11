@@ -4,8 +4,9 @@ import axios from 'axios';
 class WithNetwork extends Component {
     constructor(props) {
         super(props);
+        const _baseURL = process.env.NODE_ENV === 'production' ? window.location.origin : process.env.REACT_APP_BACKEND_URL;
         this.instance = axios.create({
-            baseURL: process.env.REACT_APP_BACKEND_URL,
+            baseURL: _baseURL,
             timeout: 3000,
             headers: {'Content-Type': 'application/x-www-form-urlencoded', 'X-App-Key' : process.env.REACT_APP_AUTH_KEY}
         });

@@ -44,18 +44,26 @@ class Tech extends Component {
                 </p>
                 <p>I should thank <a className="Blink" href="https://www.wesaturate.com" rel="noopener noreferrer" target="_blank">Wesaturate</a> for letting me download high quality raw images for this demonstration. Be sure to check them out.</p>
                 <p>This is the output after going through aforementioned steps.</p>
-                <p> <BlinkImage className="Tech-image" src={final}/> </p>
+                <br/>
+                <BlinkImage className="Tech-image" src={final}/>
+                <br/>
                 <p>This is the original photo.</p>
-                <p><BlinkImage className="Tech-image" src={original}/></p>
+                <br/>
+                <BlinkImage className="Tech-image" src={original}/>
+                <br/>
                 <p>Here is the transformation after going through first step, Processing in Lightroom.</p>
-                <p> <Comparison before={original} after={lightroom}/> </p>
+                <br/>
+                <Comparison before={original} after={lightroom}/>
+                <br/>
                 <p>I have only done color adjustments and spot adjustments with a brush. 
                     Basic adjustments consist of opacity, contrast, sharpness, highlights, shadows and etc. 
                     You can get creative with split toning. But it should be done with caution because it can 
                     really mess up your photo. I have applied the settings using a homegrown Lightroom preset. 
                     Be sure to check my <a className="Blink" href="/presets">presets</a>.</p>
                 <p>Here is what has happened to the picture in the second step</p>
-                <p><Comparison before={lightroom} after={final}/></p>
+                <br/>
+                <Comparison before={lightroom} after={final}/>
+                <br/>
                 <p>Color adjustments will hardly happen in this step. I will follow this step mostly for portraits. 
                     In other words this is like an extra make up layer. Human skin is not perfect. 
                     This step would treat those without making the person look artificial. There is not a clear line to cross in this step. 
@@ -66,7 +74,9 @@ class Tech extends Component {
                     it won’t change the identity of the person. But altering a feature like nose is not okay unless if the client really asks for it. 
                     Because changing it would give a face of a different person.</p>
                 <p>Finally here is the comparison of original photo and edited photo.</p>
-                <p><Comparison before={original} after={final}/></p>
+                <br/>
+                <Comparison before={original} after={final}/>
+                <br/>
                 <p>I hope you liked what you just saw. <a className="Blink" href="/contact">Contact me</a> for more details.</p>
             </div>
         </div>);
