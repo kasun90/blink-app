@@ -116,16 +116,16 @@ class ArticleView extends WithNetwork {
                     break;
             }
         });
-        return <p key={index}>{content}</p>;
+        return <p className="ArticleView-element" key={index}>{content}</p>;
     }
 
     deriveHeader(atag, index) {
         const BlinkHeader = `h${atag.data.size}`;
-        return <BlinkHeader key={index}>{atag.data.value}</BlinkHeader>
+        return <BlinkHeader className="ArticleView-element" key={index}>{atag.data.value}</BlinkHeader>
     }
 
     deriveNote(atag, index) {
-        return <div className="Blink-background" style={{color: 'white'}}><p style={{padding: '1em'}} key={index}>{atag.data.value}</p></div>
+        return <div className="Blink-background ArticleView-element" style={{color: 'white'}}><p style={{padding: '1em'}} key={index}>{atag.data.value}</p></div>
     }
 
     deriveImage(atag, index) {
