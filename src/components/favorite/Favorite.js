@@ -71,6 +71,10 @@ class Favorite extends Component {
     }
 
     onImageLoad(htmlID, index) {
+        if (!this.isContainerMounted) {
+            return;
+        }
+
         var imageDiv = document.getElementById(htmlID);
         imageDiv.style.backgroundImage = "url('".concat(this.imagesToLoad[index]).concat("')");
         this.loadedImages++;
