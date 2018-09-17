@@ -7,7 +7,7 @@ class WithNetwork extends Component {
         const _baseURL = process.env.NODE_ENV === 'production' ? window.location.origin : process.env.REACT_APP_BACKEND_URL;
         this.instance = axios.create({
             baseURL: _baseURL,
-            timeout: 3000,
+            timeout: 120000,
             headers: {'Content-Type': 'application/x-www-form-urlencoded', 'X-App-Key' : process.env.REACT_APP_AUTH_KEY}
         });
     }
