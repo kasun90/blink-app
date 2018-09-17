@@ -30,6 +30,15 @@ class GetTouch extends WithNetwork {
     }
 
     onSend() {
+        if (this.state.message === "" || this.state.name === "" || this.state.email === ""
+       || this.state.phoneNumber === "") {
+            this.setState({
+                modalMessage: "Please fill all the fields",
+                showModal: true
+            });
+            return;
+        }
+
         var msg = WithNetwork.buildMessage('com.blink.shared.client.messaging.UserMessage');
         msg.message = this.state.message;
         msg.name = this.state.name;
