@@ -96,6 +96,10 @@ class ArticleView extends WithNetwork {
                 return this.deriveNote(atag, index);
             case 'IMAGE':
                 return this.deriveImage(atag, index);
+            case 'LIST':
+                return this.deriveList(atag, index);
+            case 'ORDERED_LIST':
+                return this.deriveOrderedList(atag, index);
             default:
                 break;
         }
@@ -130,6 +134,38 @@ class ArticleView extends WithNetwork {
 
     deriveImage(atag, index) {
         return <BlinkImage className="ArticleView-image" key={index} src={atag.data.url}/>
+    }
+
+    deriveList(atag, index) {
+        const _children = Array.from(atag.data.children);
+        var content = [];
+        var i = 0;
+        _children.forEach((tag) => {
+            switch(tag.type) {
+                case 'TEXT':
+                    content.push(<li key={i++}>{tag.data.value}</li>);
+                    break;
+                default:
+                    break;
+            }
+        });
+        return <ul className="ArticleView-element" key={index}>{content}</ul>
+    }
+
+    deriveOrderedList(atag, index) {
+        const _children = Array.from(atag.data.children);
+        var content = [];
+        var i = 0;
+        _children.forEach((tag) => {
+            switch(tag.type) {
+                case 'TEXT':
+                    content.push(<li key={i++}>{tag.data.value}</li>);
+                    break;
+                default:
+                    break;
+            }
+        });
+        return <ol className="ArticleView-element" key={index}>{content}</ol>
     }
 }
 
