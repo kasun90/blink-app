@@ -116,6 +116,9 @@ class ArticleView extends WithNetwork {
                 case 'LINK':
                     content.push(<a className="Blink" href={tag.data.url}>{tag.data.value}</a>);
                     break;
+                case 'STRONG_TEXT':
+                    content.push(<strong>{tag.data.value}</strong>)
+                    break;
                 default:
                     break;
             }
