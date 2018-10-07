@@ -15,14 +15,17 @@ class Articles extends WithNetwork {
     constructor(props) {
         super(props);
         this.onShowMore = this.onShowMore.bind(this);
+        this.onSearch = this.onSearch.bind(this);
         this.state = {
             articles: [],
-            hasMore: false
+            hasMore: false,
+            searchStr: ''
         }
     }
 
     componentDidMount() {
         window.scroll(0, 0);
+        this.timestamp = 0;
         this.requestArticles(this.timestamp, true, this.limit);
     }
 
@@ -52,12 +55,49 @@ class Articles extends WithNetwork {
         this.requestArticles(this.timestamp, true, this.limit);
     }
 
+    onSearch(event) {
+        const _searchStr = event.target.value;
+        this.setState({
+            searchStr: _searchStr
+        });
+
+        if (_searchStr === '') {
+            this.timestamp = 0;
+            this.setState({
+                articles: [],
+                hasMore: false
+            });
+            this.requestArticles(this.timestamp, true, this.limit);
+            return;
+        }
+
+        var req = WithNetwork.buildMessage('com.blink.shared.client.article.ArticleSearchRequestMessage');
+        req.keyPhrase = _searchStr;
+
+        this.send(req, (response, error) => {
+            if (error === undefined) {
+                const _articles = Array.from(response.articles);
+                if (_articles.length === 0) {
+                    this.setState({
+                        articles: [<p className="NoArticle-view NoArticle-view">No Articles</p>]
+                    });
+                } else {
+                    this.setState({
+                        articles: _articles.map((value) => {
+                            return <ArticleThumb data={value} key={value.key}/>
+                        })
+                    });
+                }
+            }
+        });
+    }
+
     render() {
         return(<div className={`Common-container Blink`}>
             <div className="Common-title">Articles</div>
             <div className="Common-seperator"/>
             <div className="Article-search">
-            <BlinkTextField type="text" placeholder="Search"/>
+            <BlinkTextField type="text" placeholder="Search" value={this.state.searchStr} onChange={this.onSearch}/>
             </div>
             <div className="Article-container">
                 {this.state.articles}
