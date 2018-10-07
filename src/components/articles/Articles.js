@@ -11,6 +11,7 @@ class Articles extends WithNetwork {
 
     timestamp = 0;
     limit = 10;
+    acceptSearch = true;
 
     constructor(props) {
         super(props);
@@ -63,23 +64,26 @@ class Articles extends WithNetwork {
 
         if (_searchStr === '') {
             this.timestamp = 0;
+            this.acceptSearch = false;
             this.setState({
                 articles: [],
                 hasMore: false
             });
             this.requestArticles(this.timestamp, true, this.limit);
             return;
+        } else {
+            this.acceptSearch = true;
         }
 
         var req = WithNetwork.buildMessage('com.blink.shared.client.article.ArticleSearchRequestMessage');
         req.keyPhrase = _searchStr;
 
         this.send(req, (response, error) => {
-            if (error === undefined) {
+            if (error === undefined && this.acceptSearch) {
                 const _articles = Array.from(response.articles);
                 if (_articles.length === 0) {
                     this.setState({
-                        articles: [<p className="NoArticle-view NoArticle-view">No Articles</p>]
+                        articles: [<p key={'para'} className="NoArticle-view NoArticle-view">No Articles</p>]
                     });
                 } else {
                     this.setState({
@@ -88,6 +92,8 @@ class Articles extends WithNetwork {
                         })
                     });
                 }
+            } else {
+                console.log('hahaha');
             }
         });
     }
