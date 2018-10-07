@@ -1,14 +1,23 @@
 .Article-container {
     width: 70%;
-    min-height: 100vh;
+    min-height: 30vh;
     display: flex;
     flex-direction: column;
+    margin-bottom: 2em;
 }
 
 .Article-search {
     width: 70%;
     margin-top: 5vh;
     margin-bottom: 5vh;
+}
+
+.Article-view-button {
+    font-size: 2em;
+}
+
+.NoArticle-view {
+    text-align: center;
 }
 
 @media screen and (max-width: 60em) {
@@ -18,6 +27,10 @@
 
     .Article-search {
         width: 90%;
+    }
+
+    .Article-view-button {
+        font-size: 1.5em;
     }
 }
 
