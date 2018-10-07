@@ -16,6 +16,10 @@
     font-size: 2em;
 }
 
+.NoArticle-view {
+    text-align: center;
+}
+
 @media screen and (max-width: 60em) {
     .Article-container {
         width: 90%;
