@@ -92,8 +92,6 @@ class Articles extends WithNetwork {
                         })
                     });
                 }
-            } else {
-                console.log('hahaha');
             }
         });
     }
