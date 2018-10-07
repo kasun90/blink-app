@@ -10,7 +10,7 @@ import WithNetwork from '../network/WithNetwork';
 class Articles extends WithNetwork {
 
     timestamp = 0;
-    limit = 1;
+    limit = 10;
 
     constructor(props) {
         super(props);
