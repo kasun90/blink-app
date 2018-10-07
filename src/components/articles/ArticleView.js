@@ -108,6 +108,7 @@ class ArticleView extends WithNetwork {
     deriveParagraph(atag, index) {
         const _children = Array.from(atag.data.children);
         var content = [];
+        var i = 0;
         _children.forEach((tag) => {
             switch(tag.type) {
                 case 'TEXT':
@@ -117,11 +118,12 @@ class ArticleView extends WithNetwork {
                     content.push(<a className="Blink" href={tag.data.url}>{tag.data.value}</a>);
                     break;
                 case 'STRONG_TEXT':
-                    content.push(<strong>{tag.data.value}</strong>)
+                    content.push(<strong key={i}>{tag.data.value}</strong>)
                     break;
                 default:
                     break;
             }
+            i++;
         });
         return <p className="ArticleView-element" key={index}>{content}</p>;
     }
@@ -148,6 +150,9 @@ class ArticleView extends WithNetwork {
                 case 'TEXT':
                     content.push(<li key={i++}>{tag.data.value}</li>);
                     break;
+                case 'RICH_TEXT':
+                    content.push(<li key={i++}>{this.deriveRichText(tag)}</li>);
+                    break;
                 default:
                     break;
             }
@@ -164,11 +169,32 @@ class ArticleView extends WithNetwork {
                 case 'TEXT':
                     content.push(<li key={i++}>{tag.data.value}</li>);
                     break;
+                case 'RICH_TEXT':
+                    content.push(<li key={i++}>{this.deriveRichText(tag)}</li>);
+                    break;
                 default:
                     break;
             }
         });
         return <ol className="ArticleView-element" key={index}>{content}</ol>
+    }
+
+    deriveRichText(atag) {
+        const _children = Array.from(atag.data.children);
+        var content = [];
+        _children.forEach((tag) => {
+            switch(tag.type) {
+                case 'TEXT':
+                    content.push(tag.data.value);
+                    break;
+                case 'STRONG_TEXT':
+                    content.push(<strong>{tag.data.value}</strong>)
+                    break;
+                default:
+                    break;
+            }
+        });
+        return content;
     }
 }
 
