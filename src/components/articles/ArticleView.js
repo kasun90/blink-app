@@ -82,7 +82,7 @@ class ArticleView extends WithNetwork {
             <div className="ArticleView-container Blink-paragraph">
                 {atags}
             </div>
-            <div className="fb-comments" data-href={window.location.href} data-numposts="5"></div>
+            <div className="fb-comments" data-href={window.location.href} data-numposts="5" data-width="100%"></div>
         </div>);
     }
 
