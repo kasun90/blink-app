@@ -96,7 +96,7 @@ class AlbumExpanded extends WithNetwork {
                     {photos}
                 </div>
                 <BlinkButton className="AlbumExp-back-button" onClick={this.onBack}>Back to Albums</BlinkButton>
-                <div className="fb-comments" data-href={window.location.href} data-numposts="5"></div>
+                <div className="fb-comments" data-href={window.location.href} data-numposts="5" data-width="100%"></div>
             </div>
             {this.state.openShow && <AlbumSlideShow photos={this.state.album.photos} selectedIndex={this.state.selectedIndex} onClose={this.onCloseSlideShow}/>}
         </div>);

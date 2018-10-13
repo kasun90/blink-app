@@ -89,10 +89,6 @@
     font-size: 2em;
 }
 
-.fb-comments, .fb-comments span, .fb-comments.fb_iframe_widget span iframe {
-    width: 100% !important;
-  }
-
 @media screen and (max-width: 100em) {
 
     .AlbumExp-back-button {
