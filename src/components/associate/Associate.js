@@ -21,7 +21,7 @@ class Associate extends Component {
                     <img src={profile} className="Associate-profile-image" alt="profile"/>
                 </div>
                 <div className="Associate-profile-text"><span>Nubamin</span>
-                <br/>Pradeep Liyanage
+                <br/>Pradeep K. Liyanage
                 <br/>A content creator, <i>a dreamer</i>
                 <br/><br/>+94 77 732 4954
                 <br/>nubamin@gmail.com
@@ -30,10 +30,15 @@ class Associate extends Component {
             <div className="Associate-parallax" style={{backgroundImage: `url(${aero})`}}/>
             <div className="Associate-main-video">
                 <div className="Associate-main-video-container">
-                    <div className="Associate-video-title">Exploring hill country</div>
+                    <div className="Associate-video-title">Let's go Sri Lanka - Morning Dreams in Idalgashinna</div>
                     <div className="Associate-video-container">
                         <iframe frameBorder="0" title="sdf" className="Associate-video"
                         src="https://www.youtube.com/embed/rxTgDK-disY?rel=0&amp;autoplay=0&loop=1&playlist=rxTgDK-disY&controls=1&showinfo=0&autohide=1&mute=1" allowFullScreen></iframe>
+                    </div>
+                    <div className="Associate-video-title">Commercial Video shot on GoPro - Yala Republic</div>
+                    <div className="Associate-video-container">
+                        <iframe frameBorder="0" title="sdf" className="Associate-video"
+                        src="https://www.youtube.com/embed/ePruRYrY1xY?rel=0&amp;autoplay=0&loop=1&playlist=ePruRYrY1xY&controls=1&showinfo=0&autohide=1&mute=1" allowFullScreen></iframe>
                     </div>
                 </div>
             </div>
