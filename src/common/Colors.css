@@ -21,3 +21,7 @@
 .Blink-paragraph {
     color: dimgray;
 }
+
+.Blink-code-background {
+    background-color: #F6F8FA
+}

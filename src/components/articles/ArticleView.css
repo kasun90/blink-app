@@ -27,6 +27,10 @@
     width: 70%;
 }
 
+.ArticleView-code {
+    font-family: "SFMono-Regular",Consolas,"Liberation Mono",Menlo,Courier,monospace;
+}
+
 @media screen and (max-width: 60em) {
     .ArticleView-container {
         width: 90%;
