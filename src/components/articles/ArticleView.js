@@ -100,6 +100,8 @@ class ArticleView extends WithNetwork {
                 return this.deriveList(atag, index);
             case 'ORDERED_LIST':
                 return this.deriveOrderedList(atag, index);
+            case 'CODE':
+                return this.deriveCode(atag, index);
             default:
                 break;
         }
@@ -196,37 +198,24 @@ class ArticleView extends WithNetwork {
         });
         return content;
     }
+
+    deriveCode(atag, index) {
+        const _commands = Array.from(atag.data.commands);
+        var content = [];
+        _commands.forEach((tag) => {
+            switch(tag.type) {
+                case 'TEXT':
+                    content.push(tag.data.value);
+                    content.push(<br/>);
+                    break;
+                default:
+                    break;
+            }
+        });
+        return <div className="Blink-code-background ArticleView-element ArticleView-code" style={{color: 'black', padding: '1em'}} key={index}>{content}</div>;
+    }
 }
 
 export default withRouter(ArticleView);
-
-
-/* <p>You should be having a compressed preset file downloaded from the <a className="Blink" href="/presets">presets</a> page 
-                when you read this article. Extract the compressed file.</p>
-                <h2>For Lightroom CC 2018</h2>
-                <p>You can now install Lightroom presets straight from the plus sign under the Presets dialogue when you are in the Develop Module in Lightroom. 
-                    Navigate to where you have extracted the compressed file.
-                </p>
-                <BlinkImage src={howto}/>
-                <h2>How to install Lightroom 4, 5, 6 & CC 2017 presets for Windows</h2>
-                <ol>
-                    <li>Open Lightroom</li>
-                    <li>Go to: Edit -> Preferences -> Presets</li>
-                    <li>Click on the box titled: <strong>Show Lightroom Presets Folder</strong></li>
-                    <li>Double click on Lightroom</li>
-                    <li>Double click on Develop Presets</li>
-                    <li>Copy the folder(s) of your presets into the <strong>Develop Presets</strong> folder</li>
-                    <li>Restart Lightroom</li>
-                </ol>
-                <h2>How to install Lightroom 4, 5, 6 & CC 2017 presets for Mac</h2>
-                <ol>
-                    <li>Open Lightroom</li>
-                    <li>Go to: Lightroom (Dialogue) -> Preferences -> Presets</li>
-                    <li>Click on the box titled: <strong>Show Lightroom Presets Folder</strong></li>
-                    <li>Double click on Lightroom</li>
-                    <li>Double click on Develop Presets</li>
-                    <li>Copy the folder(s) of your presets into the <strong>Develop Presets</strong> folder</li>
-                    <li>Restart Lightroom</li>
-                </ol> */
 
 
