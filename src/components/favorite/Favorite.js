@@ -12,12 +12,13 @@ import img6 from './carousel/6.jpg';
 
 import Ionicon from 'react-ionicons';
 import Colors from './../../common/Colors';
+import BlinkSpinner from './../blinkSpinner/BlinkSpinner';
 
 
 class Favorite extends Component {
 
     isContainerMounted = true;
-    loadedImages = 0;
+    imageDivs = [];
 
     constructor(props) {
         super(props);
@@ -28,6 +29,18 @@ class Favorite extends Component {
         img4,
         img5,
         img6];
+        this.state = {
+            loadingDone: false,
+            loadedImages: 0
+        }
+
+        for (var i = 0; i < this.imagesToLoad.length; i++) {
+            const imageID = `carousel-${i}`
+            const image = new Image();
+            image.src = this.imagesToLoad[i];
+            image.onload = this.onImageLoad.bind(this, imageID, i)
+            this.imageDivs.push(<div id={imageID} className="Favorite-carousel" key={i}></div>)
+        }
     }
 
     componentDidMount() {
@@ -77,34 +90,31 @@ class Favorite extends Component {
 
         var imageDiv = document.getElementById(htmlID);
         imageDiv.style.backgroundImage = "url('".concat(this.imagesToLoad[index]).concat("')");
-        this.loadedImages++;
+        this.setState({
+            loadedImages: this.state.loadedImages + 1
+        });
 
-        if (this.loadedImages === this.imagesToLoad.length) {
+        if (this.state.loadedImages === this.imagesToLoad.length) {
             var imageDivs = document.getElementsByClassName("Favorite-carousel");
         
             for (var i = 0; i < imageDivs.length; i++) {
                 imageDivs[i].style.opacity = "1";
             }
+            this.setState({
+                loadingDone: true
+            });
             this.carousel();
         }
     }
 
     render() {
-
-        var imageDivs = [];
-
-        for (var i = 0; i < this.imagesToLoad.length; i++) {
-            const imageID = `carousel-${i}`
-            const image = new Image();
-            image.src = this.imagesToLoad[i];
-            image.onload = this.onImageLoad.bind(this, imageID, i)
-            imageDivs.push(<div id={imageID} className="Favorite-carousel" key={i}></div>)
-        }
-
         return (
             <div id="favorite-container" className="Favorite-container">
-                {imageDivs}
+                {this.imageDivs}
                 <div className="Favorite-overlay">
+                    <div className="Favorite-spinner">
+                        <BlinkSpinner percentageEnabled={true} done={this.state.loadingDone} pushEvent={{imageCount: this.state.loadedImages}} totalEvents={this.imagesToLoad.length}/>
+                    </div>
                     <img src={mainImage} className="Main-logo-image" alt="main" />
                     <div className={`Favorite-main-text Blink`}>REVIVING MEMORIES</div>
                     <div className="Blink">Scroll for more</div>

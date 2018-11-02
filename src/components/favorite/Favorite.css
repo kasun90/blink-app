@@ -12,6 +12,10 @@
     background-position: center;
 }
 
+.Favorite-spinner {
+    width: 3em;
+}
+
 .Favorite-icon {
     position: relative;
     -webkit-animation-name: iconAnimation; /* Safari 4.0 - 8.0 */
