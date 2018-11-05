@@ -18,8 +18,10 @@ class AlbumThumbnail extends Component {
 
     render() {
         return(<div className="Album-thumbnail-container" onClick={this.onAlbumView}>
-                <BlinkImage className="Album-thumbnail-image" src={this.props.src}/>
-            <div className="Album-name-text">{this.props.albumName}</div>
+                <div className="Album-thumbnail-image-container">
+                    <BlinkImage className="Album-thumbnail-image" src={this.props.src}/>
+                    <div className="Album-name-text">{this.props.albumName}</div>
+                </div>
         </div>);
     }
 }
