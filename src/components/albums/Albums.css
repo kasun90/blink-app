@@ -27,8 +27,8 @@
 .Album-grid {
     width: 100%;
     max-width: 100%;
+    -moz-column-count: 5;
     column-count: 5;
-    column-fill: auto;
 }
 
 .Album-view-button {
@@ -75,6 +75,7 @@
 @media screen and (max-width: 100em) {
     .Album-grid {
         column-count: 3;
+        -moz-column-count: 3;
     }
 }
 
@@ -82,6 +83,7 @@
 @media screen and (max-width: 60em) {
     .Album-grid {
         column-count: 1;
+        -moz-column-count: 1;
     }
 
     .Album-view-button {
