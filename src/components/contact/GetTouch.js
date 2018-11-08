@@ -108,7 +108,7 @@ class GetTouch extends WithNetwork {
             <div className={`GetTouch-form-container Blink`}>
                 <div className="GetTouch-header">Get In Touch</div>
                 <div className="GetTouch-Seperator"/>
-                <div className="GetTouch-sub-header">Email me<br/>kpiyumal90@gmail.com<br/><br/>Call me or Text me<br/>+94 71 331 7596
+                <div className="GetTouch-sub-header">Email me<br/>hello@justblink.xyz<br/><br/>Call me or Text me<br/>+94 71 331 7596
                 <br/><br/>or<br/>Send me a message<br/></div>
                 <div className="GetTouch-form-submit-container">
                     <BlinkTextField className="GetTouch-sub-header" type="text" placeholder="Name" value={this.state.name} onChange={this.onNameChange}/>
