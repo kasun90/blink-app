@@ -39,7 +39,7 @@ class Albums extends WithNetwork {
                         if (this.timestamp === 0 || this.timestamp > value.timestamp) {
                             this.timestamp = value.timestamp;
                         }
-                        return <AlbumThumbnail src={value.cover.url} key={value.key} albumName={value.title} albumKey={value.key}/>
+                        return <AlbumThumbnail src={value.cover.url} key={value.key} albumName={value.title} albumDescription={value.description} albumKey={value.key}/>
                     })),
                     hasMore: _albums.length === this.limit
                 });

@@ -38,39 +38,41 @@
 /* Thumbnail */
 
 .Album-thumbnail-container {
-    display: block;
+    display: table;
     break-inside: avoid-column;
     width: 100%;
     padding: 10vh 1vw;
 }
 
 .Album-thumbnail-image-container {
-    position: relative;
     width: 100%;
-    padding: 1vh;
     height: auto;
-    border: 1px solid;
     cursor: pointer;
     opacity: 1;
     transition: all 0.5s ease;
 }
 
+.Album-thumbnail-footer {
+    padding: 1em;
+}
 
 .Album-thumbnail-image {
     width: 100%;
     height: auto;
     display: block;
-    cursor: pointer;
 }
 
 .Album-name-text {
-    cursor: pointer;
+    font-weight: bold;
     font-size: 2em;
-    position: absolute;
-    width: 100%;
-    left: 0.5em;
-    bottom: 0.5em;
     text-align: left;
+    color: white;
+}
+
+.Album-name-sub-text {
+    font-size: 1em;
+    text-align: left;
+    color: white;
 }
 
 .Album-thumbnail-image-container:hover {
