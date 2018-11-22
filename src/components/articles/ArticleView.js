@@ -215,7 +215,11 @@ class ArticleView extends WithNetwork {
                     break;
             }
         });
-        return <div className="Blink-code-background ArticleView-element ArticleView-code" style={{color: 'black', padding: '1em'}} key={index}>{content}</div>;
+        return <div className="ArticleView-element ArticleView-code" style={{color: 'black'}} key={index}>
+        <pre className="ArticleView-terminal Blink-code-background" style={{padding: '1em'}}>
+            {content}
+        </pre>
+        </div>;
     }
 
     deriveTerminal(atag, index) {
