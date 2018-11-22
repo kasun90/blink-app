@@ -31,6 +31,23 @@
     font-family: "SFMono-Regular",Consolas,"Liberation Mono",Menlo,Courier,monospace;
 }
 
+.ArticleView-terminal {
+    word-wrap: normal;
+    overflow: auto;
+}
+
+.ArticleView-terminal-list {
+    list-style: none;
+    margin-left: 0;
+    padding-left: 1em;
+}
+
+.ArticleView-terminal-list li::before {
+    content: attr(prefix);
+    margin-right: 0.5em;
+    margin-left: 0.1em;
+}
+
 @media screen and (max-width: 60em) {
     .ArticleView-container {
         width: 90%;

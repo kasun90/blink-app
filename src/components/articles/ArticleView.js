@@ -102,6 +102,8 @@ class ArticleView extends WithNetwork {
                 return this.deriveOrderedList(atag, index);
             case 'CODE':
                 return this.deriveCode(atag, index);
+            case 'TERMINAL':
+                return this.deriveTerminal(atag, index);
             default:
                 break;
         }
@@ -200,19 +202,41 @@ class ArticleView extends WithNetwork {
     }
 
     deriveCode(atag, index) {
-        const _commands = Array.from(atag.data.commands);
+        const _lines = Array.from(atag.data.lines);
         var content = [];
-        _commands.forEach((tag) => {
+        var i = 0;
+        _lines.forEach((tag) => {
             switch(tag.type) {
                 case 'TEXT':
                     content.push(tag.data.value);
-                    content.push(<br/>);
+                    content.push(<br key={i++}/>);
                     break;
                 default:
                     break;
             }
         });
         return <div className="Blink-code-background ArticleView-element ArticleView-code" style={{color: 'black', padding: '1em'}} key={index}>{content}</div>;
+    }
+
+    deriveTerminal(atag, index) {
+        const _commands = Array.from(atag.data.commands);
+        var content = [];
+        var i = 0;
+        _commands.forEach((tag) => {
+            switch(tag.type) {
+                case 'TEXT':
+                    content.push(<li prefix="$" key={i++}>{tag.data.value}</li>);
+                    break;
+                default:
+                    break;
+            }
+        });
+        return <div className="ArticleView-element ArticleView-code" style={{color: 'black'}} key={index}>
+                    <pre className="ArticleView-terminal Blink-code-background">
+                        <ul className="ArticleView-terminal-list" key={index}>{content}</ul>
+                    </pre>
+                    
+            </div>;
     }
 }
 
