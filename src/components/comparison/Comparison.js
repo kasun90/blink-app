@@ -35,6 +35,7 @@ class Comparison extends Component {
     setBackgroundImage() {
         this.comparisonAfterRef.current.style.background = `url(${this.props.after})`;
         this.comparisonAfterRef.current.style.backgroundPosition = "center right";
+        this.comparisonAfterRef.current.style.setProperty('--x', '50%')
     }
 
     setBackgroundSize() {
