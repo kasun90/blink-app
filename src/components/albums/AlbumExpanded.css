@@ -123,4 +123,9 @@
     .AlbumExp-image-image {
         pointer-events: none;
     }
+
+    .AlbumExp-image-container {
+        pointer-events: none;
+        padding: 2em 0;
+    }
 }

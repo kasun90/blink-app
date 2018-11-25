@@ -20,7 +20,6 @@ class BlinkSpinner extends Component {
             percentage: 0,
             done: this.props.done || false
         }
-        this.setPercentage();
     }
 
     componentDidMount() {
