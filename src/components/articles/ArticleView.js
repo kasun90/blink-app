@@ -6,6 +6,7 @@ import {withRouter} from 'react-router-dom';
 import BlinkImage from '../blinkImage/BlinkImage';
 import WithNetwork from '../network/WithNetwork';
 import NoArticle from './NoArticle';
+import Loading from './../blinkLoading/Loading';
 
 class ArticleView extends WithNetwork {
 
@@ -60,8 +61,12 @@ class ArticleView extends WithNetwork {
 
     render() {
 
-        if (this.state.noArticle || this.state.article === undefined) {
+        if (this.state.noArticle) {
             return(<NoArticle/>);
+        }
+
+        if (this.state.article === undefined) {
+            return (<Loading/>);
         }
 
         const _article = this.state.article;
