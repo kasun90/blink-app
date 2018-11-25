@@ -8,6 +8,7 @@ import BlinkButton from './../blinkbutton/BlinkButton';
 import {withRouter} from 'react-router-dom';
 import WithNetwork from '../network/WithNetwork';
 import AlbumSlideShow from './AlbumSlideShow';
+import Loading from './../blinkLoading/Loading';
 
 class AlbumExpanded extends WithNetwork {
 
@@ -72,8 +73,12 @@ class AlbumExpanded extends WithNetwork {
     }
 
     render() {
-        if (this.state.noAlbum || this.state.album === undefined) {
+        if (this.state.noAlbum) {
             return(<NoAlbum/>);
+        }
+
+        if (this.state.album === undefined) {
+            return (<Loading/>);
         }
 
         const photos = [];
