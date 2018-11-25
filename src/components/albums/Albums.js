@@ -5,6 +5,7 @@ import './../../App.css';
 import AlbumThumbnail from './AlbumThumbnail';
 import BlinkButton from './../blinkbutton/BlinkButton';
 import WithNetwork from '../network/WithNetwork';
+import Loading from '../blinkLoading/Loading';
 
 class Albums extends WithNetwork {
 
@@ -53,6 +54,11 @@ class Albums extends WithNetwork {
 
 
     render() {
+
+        if (this.state.albums.length === 0) {
+            return (<Loading/>);
+        }
+
         return(<div className={`Common-container Blink`}>
             <div className="Common-title">Albums</div>
             <div className="Common-seperator"/>
