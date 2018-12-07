@@ -10,6 +10,8 @@ import BlinkImage from '../blinkImage/BlinkImage';
 
 class GetTouch extends WithNetwork {
 
+    recaptchaToken = "";
+
     constructor(props) {
         super(props);
         this.state = {
@@ -29,6 +31,10 @@ class GetTouch extends WithNetwork {
         this.onModalClose = this.onModalClose.bind(this);
     }
 
+    componentDidMount() {
+        this.generateRecaptchaCode();
+    }
+
     onSend() {
         if (this.state.message === "" || this.state.name === "" || this.state.email === ""
        || this.state.phoneNumber === "") {
@@ -39,11 +45,20 @@ class GetTouch extends WithNetwork {
             return;
         }
 
+        if (this.recaptchaToken === "") {
+            this.setState({
+                modalMessage: "Unknown error. Please refresh the page.",
+                showModal: true
+            });
+            return;
+        }
+
         var msg = WithNetwork.buildMessage('com.blink.shared.client.messaging.UserMessage');
         msg.message = this.state.message;
         msg.name = this.state.name;
         msg.email = this.state.email;
         msg.phone = this.state.phoneNumber;
+        msg.recaptchaToken = this.recaptchaToken;
         this.setState({
             isSending: true
         });
@@ -64,7 +79,7 @@ class GetTouch extends WithNetwork {
                     showModal: true,
                     isSending: false
                 })
-                
+                this.generateRecaptchaCode();
             }
         });
     }
@@ -97,6 +112,18 @@ class GetTouch extends WithNetwork {
         this.setState({
             showModal: false
         });
+    }
+
+    generateRecaptchaCode() {
+        if (window.grecaptcha !== undefined) {
+            window.grecaptcha.ready(() => {
+               window.grecaptcha.execute('6LdQV38UAAAAAPDmWPjOubE-81Ft8vqwW-nuFcEI', {action: 'user_message'})
+                .then((token) => {
+                    console.log(token);
+                    this.recaptchaToken = token;
+                });
+            });
+        }
     }
 
 
