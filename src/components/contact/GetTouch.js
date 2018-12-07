@@ -63,24 +63,28 @@ class GetTouch extends WithNetwork {
             isSending: true
         });
         this.send(msg, (response, error) => {
+            this.setState({
+                showModal: true,
+                isSending: false
+            });
             if (error !== undefined) {
                 this.setState({
-                    modalMessage: "Network Error",
-                    showModal: true,
-                    isSending: false
+                    modalMessage: "Network Error"
                 });
             } else {
                 this.setState({
-                    name: "",
-                    phoneNumber: "",
-                    message: "",
-                    email: "",
-                    modalMessage: "Your message has been sent",
-                    showModal: true,
-                    isSending: false
-                })
-                this.generateRecaptchaCode();
+                    modalMessage: response.description
+                });
+                if (response.status) {
+                    this.setState({
+                        name: "",
+                        phoneNumber: "",
+                        message: "",
+                        email: ""
+                    });
+                }
             }
+            this.generateRecaptchaCode();
         });
     }
 
@@ -119,7 +123,6 @@ class GetTouch extends WithNetwork {
             window.grecaptcha.ready(() => {
                window.grecaptcha.execute('6LdQV38UAAAAAPDmWPjOubE-81Ft8vqwW-nuFcEI', {action: 'user_message'})
                 .then((token) => {
-                    console.log(token);
                     this.recaptchaToken = token;
                 });
             });
