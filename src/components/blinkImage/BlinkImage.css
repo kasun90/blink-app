@@ -1,11 +1,29 @@
 .Blink-image-image {
     width: 100%;
-    height: auto;
-    display: block;
+}
+
+.Blink-image-with-placeholder {
+    height: 0;
     opacity: 0;
     transition: opacity 0.5s ease-in;
 }
 
-.Blink-image-load {
+.Blink-image-with-placeholder-load {
+    height: auto;
+    display: block;
     opacity: 1;
+}
+
+.Blink-image-without-placeholder {
+    opacity: 0;
+    transition: opacity 0.5s ease-in;
+}
+
+.Blink-image-without-placeholder-load {
+    opacity: 1;
+}
+
+.Blink-image-placeholder {
+    width: 100%;
+    padding-top: 66.66%;
 }
