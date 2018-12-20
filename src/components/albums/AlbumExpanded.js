@@ -101,7 +101,7 @@ class AlbumExpanded extends WithNetwork {
                     {photos}
                 </div>
                 <BlinkButton className="AlbumExp-back-button" onClick={this.onBack}>Back to Albums</BlinkButton>
-                <div class="fb-share-button" data-href={window.location.href} data-layout="button_count" data-size="small" data-mobile-iframe="true"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Share</a></div>
+                <div class="fb-share-button" data-href={window.location.href} data-layout="button_count" data-size="small" data-mobile-iframe="true"><a target="_blank" rel="noopener noreferrer" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Share</a></div>
                 <div className="fb-comments" data-href={window.location.href} data-numposts="5" data-width="100%"></div>
             </div>
             {this.state.openShow && <AlbumSlideShow photos={this.state.album.photos} selectedIndex={this.state.selectedIndex} onClose={this.onCloseSlideShow}/>}
