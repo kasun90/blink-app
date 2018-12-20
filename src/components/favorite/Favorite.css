@@ -5,11 +5,15 @@
 }
 
 .Favorite-carousel {
+    top: 0;
+    left: 0;
+    position: absolute;
     width: 100%;
     height: 100%;
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
+    transition: opacity 0.5s ease-in-out;
 }
 
 .Favorite-spinner {
