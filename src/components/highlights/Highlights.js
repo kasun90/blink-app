@@ -6,21 +6,19 @@ import fashion from './img/fashion.jpg';
 import nature2 from './img/nature2.jpg';
 import Ionicon from 'react-ionicons';
 import Colors from './../../common/Colors';
-import BlinkImage from '../blinkImage/BlinkImage';
+import BlinkParallax from './../blinkParallax/BlinkParallax';
+
 
 class Highlights extends Component {
     render() {
+
+        const _natureData = {title: "Fields of Ampara", description: "Found this on the way to my trip to Amapara with friends. You can see this place while you travel via the scenic Lahugala road."};
+
+
         return (
             
         <div className="Highlight-container">
-            <div className="Story-container">
-                <div className="Content-container" style={{backgroundImage: `url(${nature})`}}>
-                    <div className={`Center-text Title`}>Fields of Ampara</div>
-                    <div className="Seperator"></div>
-                    <div className={`Center-text Description`}>Found this on the way to my trip to Amapara with friends. 
-                        You can see this place while you travel via the scenic Lahugala road.</div>
-                </div>
-            </div>
+            <BlinkParallax data={_natureData} background={nature}/>
         </div>
         );
     }
