@@ -25,7 +25,7 @@ class Highlights extends Component {
 
         const _natureData = {title: "Fields of Ampara", description: "Found this on the way to my trip to Amapara with friends. You can see this place while you travel via the scenic Lahugala road."};
         const _natureData2 = {title: "I love nature!", description: "Cold weather and hiking. That is one perfect combination. Captured this at Badulla"};
-        const _fashionData = {title: "I'm in to portraits!", description: "Get your portraits done. Choose the style you want. Procedure has never been more flexible. Book your session now"};
+        const _fashionData = {title: "I love candids!", description: "Get your event photographed. Choose the style you want. Procedure has never been more flexible. Book your session now"};
 
         return (
             
