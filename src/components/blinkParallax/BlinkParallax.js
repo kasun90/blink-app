@@ -6,6 +6,8 @@ class BlinkParallax extends Component {
     constructor(props) {
         super(props);
         this.onPageScroll = this.onPageScroll.bind(this);
+        this.mainRef = React.createRef();
+        this.contentRef = React.createRef();
     }
 
     componentDidMount() {
@@ -17,9 +19,7 @@ class BlinkParallax extends Component {
     }
 
     onPageScroll() {
-        const element  = document.getElementById('bp-main');
-        const contentElemet = document.getElementById('bp-content');
-        const totalScrollAmount = window.innerHeight + element.clientHeight;
+        const totalScrollAmount = window.innerHeight +  this.mainRef.current.clientHeight;
         var scrollAmount = 0;
 
         if (document.body.scrollTop !== 0) {
@@ -28,18 +28,17 @@ class BlinkParallax extends Component {
             scrollAmount = document.documentElement.scrollTop;
         }
 
-        const currentScrollOfDiv = scrollAmount + window.innerHeight - element.offsetTop;
+        const currentScrollOfDiv = scrollAmount + window.innerHeight - this.mainRef.current.offsetTop;
         if (currentScrollOfDiv >= 0) {
             var scrollPercentage = (currentScrollOfDiv * 100 / totalScrollAmount).toFixed(2);
-            contentElemet.style.backgroundPositionY = (100 - scrollPercentage) + '%';
-            console.log('Scrolled percentage: ' + scrollPercentage);
+            this.contentRef.current.style.backgroundPositionY = (100 - scrollPercentage) + '%';
         }
     }
 
     render() {
         return (
-        <div id="bp-main" className="bp-main-container">
-            <div id="bp-content" className="bp-content-container" style={{backgroundImage: `url(${this.props.background})`}}>
+        <div ref={this.mainRef} className="bp-main-container">
+            <div ref={this.contentRef} className="bp-content-container" style={{backgroundImage: `url(${this.props.background})`}}>
                 <div className="bp-center-text bp-title">{this.props.data.title}</div>
                 <div className="seperator"></div>
                 <div className="bp-center-text bp-description">{this.props.data.description}</div>

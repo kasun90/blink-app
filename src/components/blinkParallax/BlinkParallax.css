@@ -37,3 +37,13 @@
 .bp-description {
     font-size: 1em;
 }
+
+@media screen and (max-width: 50em) {
+    .bp-title {
+        font-size: 2em;
+    }
+    
+    .bp-description {
+        font-size: 0.5em;
+    }
+}
