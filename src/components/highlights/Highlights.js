@@ -18,6 +18,8 @@ import ranga from './img/gridsweet/ranga.jpg';
 
 // joy grid
 import thanu from './img/gridjoy/thanu.jpg';
+import bash from './img/gridjoy/bash.jpg';
+import malwed from './img/gridjoy/malwed.jpg';
 
 class Highlights extends Component {
 
@@ -69,8 +71,8 @@ class Highlights extends Component {
                 </div>
                 <div className="Brief-grid-container">
                     <div><img className="Brief-grid-item-image" src={thanu} alt="blink-grid"/></div>
-                    <div><img className="Brief-grid-item-image" src={fashion} alt="blink-grid"/></div>
-                    <div><img className="Brief-grid-item-image" src={fashion} alt="blink-grid"/></div>
+                    <div><img className="Brief-grid-item-image" src={bash} alt="blink-grid"/></div>
+                    <div><img className="Brief-grid-item-image" src={malwed} alt="blink-grid"/></div>
                     <div><img className="Brief-grid-item-image" src={fashion} alt="blink-grid"/></div>
                 </div>
             </div>
