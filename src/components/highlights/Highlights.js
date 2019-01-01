@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import './Highlights.css';
 import './../../common/Colors.css';
-import fashion from './img/fashion.jpg';
 import fashion2 from './img/fashion2.jpg';
 import fashion3 from './img/fashion3.jpg';
 import nature2 from './img/nature2.jpg';
@@ -20,6 +19,7 @@ import ranga from './img/gridsweet/ranga.jpg';
 import thanu from './img/gridjoy/thanu.jpg';
 import bash from './img/gridjoy/bash.jpg';
 import malwed from './img/gridjoy/malwed.jpg';
+import sajana from './img/gridjoy/sajana.jpg';
 
 class Highlights extends Component {
 
@@ -66,14 +66,14 @@ class Highlights extends Component {
                 <div className="Brief-text-container Blink">
                     <div className="Brief-text-title">A creator of joy</div>
                     <div className="Seperator"></div>
-                    <div className="Brief-text-description"><p>I would love to be a creator of joy. So I chose photography as the way to make it happen. You can consider inviting me to your parties, office's events, birthdays, engagements and etc. I provide very flexible pricing schemes that suit all your needs. Just talk to me!</p></div>
+                    <div className="Brief-text-description"><p>I would love to be a creator of joy. So I chose photography as the way to make it happen. You can consider inviting me to your parties, office's events, birthdays, engagements and etc. I provide very flexible pricing plans that suit all of your needs. Just talk to me!</p></div>
                     <BlinkButton onClick={this.onContact}>Contact Me</BlinkButton>
                 </div>
                 <div className="Brief-grid-container">
                     <div><img className="Brief-grid-item-image" src={thanu} alt="blink-grid"/></div>
                     <div><img className="Brief-grid-item-image" src={bash} alt="blink-grid"/></div>
                     <div><img className="Brief-grid-item-image" src={malwed} alt="blink-grid"/></div>
-                    <div><img className="Brief-grid-item-image" src={fashion} alt="blink-grid"/></div>
+                    <div><img className="Brief-grid-item-image" src={sajana} alt="blink-grid"/></div>
                 </div>
             </div>
             <BlinkParallax data={_fashionData} background={fashion2}/>
