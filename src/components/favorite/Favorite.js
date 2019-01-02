@@ -62,12 +62,10 @@ class Favorite extends Component {
         var imageDivs = document.getElementsByClassName("Favorite-carousel");
         
         for (var i = 0; i < imageDivs.length; i++) {
-            imageDivs[i].style.display = "none";
+            imageDivs[i].style.opacity = "0";
         }
         
-        
-        
-        imageDivs[this.index].style.display = "block";
+        imageDivs[this.index].style.opacity = "1";
 
 
         this.index++;

@@ -1,0 +1,51 @@
+.bp-main-container {
+    height: 90vh;
+    width: 100%;
+}
+
+.bp-content-container {
+    color: white;
+    text-shadow: 1px 1px black;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-attachment: scroll;
+    background-position: 50% 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.bp-center-text {
+    text-align: center;
+}
+
+.bp-title {
+    font-size: 3em;
+}
+
+.seperator {
+    width: 50%;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    margin-right: auto;
+    margin-left: auto;
+    border-bottom: 1px solid;
+    /* box-shadow: 1px 1px black; */
+}
+
+.bp-description {
+    font-size: 1em;
+}
+
+@media screen and (max-width: 50em) {
+    .bp-title {
+        font-size: 2em;
+    }
+    
+    .bp-description {
+        font-size: 0.5em;
+    }
+}

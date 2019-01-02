@@ -22,7 +22,7 @@ class Footer extends Component {
                 </a>
             </div>
             <div className={`Copyright Blink`}>
-                © 2018 Blink
+                © 2019 Blink
             </div>
         </div>
         );
