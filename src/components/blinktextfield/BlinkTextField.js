@@ -14,14 +14,22 @@ class BlinkTextField extends Component {
 
     onTextChange(event) {
 
-        if (event.target.value === "") {
-            this.isEmpty = true;
-        } else {
-            this.isEmpty = false;
-        }
+        this.setEmpty(event.target.value);
 
         if (this.props.onChange != undefined) {
             this.props.onChange(event);
+        }
+    }
+
+    componentWillReceiveProps(nextProps, nextState) {
+        this.setEmpty(nextProps.value);
+    }
+
+    setEmpty(value) {
+        if (value === "") {
+            this.isEmpty = true;
+        } else {
+            this.isEmpty = false;
         }
     }
 

@@ -32,6 +32,7 @@ class Subscribe extends WithNetwork {
     }
 
     onSend() {
+        this.generateRecaptchaCode();
         if (this.state.firstName === "" || this.state.lastName === "" || this.state.email === "") {
             this.setState({
                 showModal: true,
@@ -47,6 +48,40 @@ class Subscribe extends WithNetwork {
             });
             return;
         }
+
+        var msg = WithNetwork.buildMessage('com.blink.shared.client.subscription.NewSubscribeRequestMessage');
+        msg.firstName = this.state.firstName;
+        msg.lastName = this.state.lastName;
+        msg.email = this.state.email;
+        msg.recaptchaToken = this.recaptchaToken;
+
+        this.setState({
+            isSending: true
+        });
+
+        this.send(msg, (response, error) => {
+            this.setState({
+                showModal: true,
+                isSending: false
+            });
+            if (error !== undefined) {
+                this.setState({
+                    modalMessage: "Network Error"
+                });
+            } else {
+                this.setState({
+                    modalMessage: response.description
+                });
+                if (response.status) {
+                    this.setState({
+                        email: "",
+                        firstName: "",
+                        lastName: ""
+                    });
+                }
+            }
+            this.generateRecaptchaCode();
+        });
     }
 
     onFirstNameChange(event) {
