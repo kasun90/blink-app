@@ -1,0 +1,53 @@
+.Subscribe-container {
+    width: 100%;
+    margin-top: 10em;
+}
+
+.Subscribe-sub-container {
+    margin-top: 1em;
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.Subscribe-button {
+    margin-top: 1em;
+}
+
+.Subscribe-header {
+    font-size: 1.5em;
+    text-align: center;
+    font-weight: bold;
+}
+
+.Subscribe-name-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.Subscribe-name-container .Subscribe-textfield {
+    width: 45%;
+}
+
+.Subscribe-textfield {
+    font-size: 1.5em;
+}
+
+@media screen and (max-width: 60em) {
+    .Subscribe-name-container {
+        flex-direction: column;
+    }
+
+    .Subscribe-sub-container {
+        width: 90%;
+    }
+
+    .Subscribe-name-container .Subscribe-textfield {
+        width: 100%;
+    }
+}

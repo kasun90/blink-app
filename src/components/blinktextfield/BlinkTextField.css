@@ -28,7 +28,7 @@
 
 
 .Blink-text-caption {
-    font-size: 0.4em;
+    font-size: 0.5em;
     opacity: 0;
     transition: opacity 0.5s ease;
 }
