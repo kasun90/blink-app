@@ -111,7 +111,7 @@ class Subscribe extends WithNetwork {
     generateRecaptchaCode() {
         if (window.grecaptcha !== undefined) {
             window.grecaptcha.ready(() => {
-               window.grecaptcha.execute('6LdQV38UAAAAAPDmWPjOubE-81Ft8vqwW-nuFcEI', {action: 'user_message'})
+               window.grecaptcha.execute('6LdQV38UAAAAAPDmWPjOubE-81Ft8vqwW-nuFcEI', {action: 'subscription'})
                 .then((token) => {
                     this.recaptchaToken = token;
                 });
