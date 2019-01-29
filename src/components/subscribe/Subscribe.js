@@ -8,8 +8,6 @@ import BlinkModal from '../blinkModal/BlinkModal';
 
 class Subscribe extends WithNetwork {
 
-    recaptchaToken = "";
-
     constructor(props) {
         super(props);
         this.state = {
@@ -25,14 +23,10 @@ class Subscribe extends WithNetwork {
         this.onLastNameChange = this.onLastNameChange.bind(this);
         this.onEmailChange = this.onEmailChange.bind(this);
         this.onModalClose = this.onModalClose.bind(this);
-    }
-
-    componentDidMount() {
-        this.generateRecaptchaCode();
+        this.sendMessage = this.sendMessage.bind(this);
     }
 
     onSend() {
-        this.generateRecaptchaCode();
         if (this.state.firstName === "" || this.state.lastName === "" || this.state.email === "") {
             this.setState({
                 showModal: true,
@@ -40,8 +34,18 @@ class Subscribe extends WithNetwork {
             });
             return;
         }
+        
+        this.setState({
+            isSending: true
+        });
+        this.generateRecaptchaCode((token) => {
+            this.sendMessage(token);
+        });
+        
+    }
 
-        if (this.recaptchaToken === "") {
+    sendMessage(token) {
+        if (token === "") {
             this.setState({
                 modalMessage: "Unknown error. Please refresh the page.",
                 showModal: true
@@ -53,11 +57,7 @@ class Subscribe extends WithNetwork {
         msg.firstName = this.state.firstName;
         msg.lastName = this.state.lastName;
         msg.email = this.state.email;
-        msg.recaptchaToken = this.recaptchaToken;
-
-        this.setState({
-            isSending: true
-        });
+        msg.recaptchaToken = token;
 
         this.send(msg, (response, error) => {
             this.setState({
@@ -80,7 +80,6 @@ class Subscribe extends WithNetwork {
                     });
                 }
             }
-            this.generateRecaptchaCode();
         });
     }
 
@@ -108,12 +107,12 @@ class Subscribe extends WithNetwork {
         });
     }
 
-    generateRecaptchaCode() {
+    generateRecaptchaCode(callback) {
         if (window.grecaptcha !== undefined) {
             window.grecaptcha.ready(() => {
                window.grecaptcha.execute('6LdQV38UAAAAAPDmWPjOubE-81Ft8vqwW-nuFcEI', {action: 'subscription'})
                 .then((token) => {
-                    this.recaptchaToken = token;
+                    callback(token)
                 });
             });
         }
