@@ -16,7 +16,7 @@ class BlinkTextField extends Component {
 
         this.setEmpty(event.target.value);
 
-        if (this.props.onChange != undefined) {
+        if (this.props.onChange !== undefined) {
             this.props.onChange(event);
         }
     }
