@@ -13,6 +13,7 @@ import Presets from './components/presets/Presets';
 import Articles from './components/articles/Articles';
 import Tech from './components/tech/Tech';
 import ArticleView from './components/articles/ArticleView';
+import Unsubscribe from './components/unsubscribe/Unsubscribe';
 
 
 class App extends Component {
@@ -31,6 +32,7 @@ class App extends Component {
             <Route exact path="/articles" component={Articles}/>
             <Route exact path="/articles/:articleKey" component={ArticleView}/>
             <Route exact path="/tech" component={Tech}/>
+            <Route exact path="/action/unsubscribe" component={Unsubscribe}/>
             <Route component={NoMatch}/>
           </Switch>
           <Footer/>

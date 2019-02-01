@@ -107,17 +107,6 @@ class Subscribe extends WithNetwork {
         });
     }
 
-    generateRecaptchaCode(callback) {
-        if (window.grecaptcha !== undefined) {
-            window.grecaptcha.ready(() => {
-               window.grecaptcha.execute('6LdQV38UAAAAAPDmWPjOubE-81Ft8vqwW-nuFcEI', {action: 'subscription'})
-                .then((token) => {
-                    callback(token)
-                });
-            });
-        }
-    }
-
     render() {
         return(<div className="Subscribe-container Blink">
             <div className="Subscribe-header">
