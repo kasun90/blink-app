@@ -16,6 +16,17 @@ class WithNetwork extends Component {
         return {'_type':type}
     }
 
+    generateRecaptchaCode(callback) {
+        if (window.grecaptcha !== undefined) {
+            window.grecaptcha.ready(() => {
+               window.grecaptcha.execute('6LdQV38UAAAAAPDmWPjOubE-81Ft8vqwW-nuFcEI', {action: 'subscription'})
+                .then((token) => {
+                    callback(token)
+                });
+            });
+        }
+    }
+
     send(data, callback) {
         const params = new URLSearchParams();
         params.append('target', "CLIENT");
