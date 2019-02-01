@@ -1,3 +1,6 @@
+/* eslint-disable jsx-a11y/interactive-supports-focus */
+/* eslint-disable jsx-a11y/click-events-have-key-events */
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import React, { Component } from 'react';
 import './BlinkButton.css';
 import './../../common/Colors.css';
