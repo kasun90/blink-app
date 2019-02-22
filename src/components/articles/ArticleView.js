@@ -7,6 +7,7 @@ import BlinkImage from '../blinkImage/BlinkImage';
 import WithNetwork from '../network/WithNetwork';
 import NoArticle from './NoArticle';
 import Loading from './../blinkLoading/Loading';
+import BlinkGist from '../blinkGist/BlinkGist';
 
 class ArticleView extends WithNetwork {
 
@@ -110,6 +111,8 @@ class ArticleView extends WithNetwork {
                 return this.deriveCode(atag, index);
             case 'TERMINAL':
                 return this.deriveTerminal(atag, index);
+            case 'GIST':
+                return this.deriveGist(atag, index);
             default:
                 break;
         }
@@ -247,6 +250,10 @@ class ArticleView extends WithNetwork {
                     </pre>
                     
             </div>;
+    }
+
+    deriveGist(atag, index) {
+        return <BlinkGist key={index} gist={atag.data.source} file={atag.data.file}/>
     }
 }
 
