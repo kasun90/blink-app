@@ -68,7 +68,9 @@
     height: 3em;
     margin-bottom: 1em;
     border: 0px;
-    padding: 0.5em 1em;
+		padding: 0.5em 1em;
+		color: inherit;
+		background: inherit;
 }
 
 /* About Me*/
